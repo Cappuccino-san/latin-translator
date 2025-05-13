@@ -1,0 +1,72 @@
+body {
+  font-family: sans-serif;
+  width: 400px;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 95%;
+  min-height: 80px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#translation-output h2,
+#history-section h2,
+#vocabulary-section h2 {
+  font-size: 1.2em;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+#results,
+#history-list,
+#vocabulary-list {
+  min-height: 50px;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+#history-list li,
+#vocabulary-list li {
+  padding: 3px 0;
+  border-bottom: 1px dotted #ddd;
+}
+
+#history-list li:last-child,
+#vocabulary-list li:last-child {
+  border-bottom: none;
+}
+
