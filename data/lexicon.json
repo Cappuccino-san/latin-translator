@@ -1,0 +1,3102 @@
+{
+  "_comment": "Curated Whitaker-style lexicon. Each entry is a lemma + stem(s); morphology.py generates all regular forms from the stem, the way Whitaker's WORDS does with STEMLIST + INFLECTS. Irregular forms are listed explicitly and always win over generated forms. Drop a Whitaker DICTLINE-style file in data/whitaker/ and see docs/whitaker.md for the loader contract.",
+  "entries": [
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "girl",
+      "lemma": "puella",
+      "pos": "noun",
+      "stem": "puell"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "rose",
+      "lemma": "rosa",
+      "pos": "noun",
+      "stem": "ros"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "Troy",
+      "lemma": "Troia",
+      "pos": "noun",
+      "stem": "Troi"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "Italy",
+      "lemma": "Italia",
+      "pos": "noun",
+      "stem": "Itali"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "shore, coast",
+      "lemma": "ora",
+      "pos": "noun",
+      "stem": "or"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "land, earth",
+      "lemma": "terra",
+      "pos": "noun",
+      "stem": "terr"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "anger, wrath",
+      "lemma": "ira",
+      "pos": "noun",
+      "stem": "ir"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "cause, reason",
+      "lemma": "causa",
+      "pos": "noun",
+      "stem": "caus"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "queen",
+      "lemma": "regina",
+      "pos": "noun",
+      "stem": "regin"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "Rome",
+      "lemma": "Roma",
+      "pos": "noun",
+      "stem": "Rom"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "Muse",
+      "lemma": "Musa",
+      "pos": "noun",
+      "stem": "Mus"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "fatherland",
+      "lemma": "patria",
+      "pos": "noun",
+      "stem": "patri"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "patience, endurance",
+      "lemma": "patientia",
+      "pos": "noun",
+      "stem": "patienti"
+    },
+    {
+      "decl": 1,
+      "gender": "f",
+      "gloss": "Gaul",
+      "lemma": "Gallia",
+      "pos": "noun",
+      "stem": "Galli"
+    },
+    {
+      "decl": 2,
+      "gender": "m",
+      "gloss": "slave, servant",
+      "lemma": "servus",
+      "pos": "noun",
+      "stem": "serv"
+    },
+    {
+      "decl": 2,
+      "gender": "m",
+      "gloss": "man, hero",
+      "lemma": "vir",
+      "pos": "noun",
+      "stem": "vir"
+    },
+    {
+      "decl": 2,
+      "gender": "m",
+      "gloss": "people",
+      "lemma": "populus",
+      "pos": "noun",
+      "stem": "popul"
+    },
+    {
+      "decl": 2,
+      "gender": "m",
+      "gloss": "mind, spirit",
+      "lemma": "animus",
+      "pos": "noun",
+      "stem": "anim"
+    },
+    {
+      "decl": 2,
+      "gender": "n",
+      "gloss": "war",
+      "lemma": "bellum",
+      "pos": "noun",
+      "stem": "bell"
+    },
+    {
+      "decl": 2,
+      "gender": "n",
+      "gloss": "fate, destiny",
+      "lemma": "fatum",
+      "pos": "noun",
+      "stem": "fat"
+    },
+    {
+      "decl": 2,
+      "gender": "n",
+      "gloss": "Latium",
+      "lemma": "Latium",
+      "pos": "noun",
+      "stem": "Lati"
+    },
+    {
+      "decl": 2,
+      "gender": "m",
+      "gloss": "god above, deity",
+      "irregular": {
+        "superum": {
+          "case": "genitive",
+          "gender": "m",
+          "number": "plural"
+        }
+      },
+      "lemma": "superus",
+      "pos": "noun",
+      "stem": "super"
+    },
+    {
+      "decl": 3,
+      "gender": "m",
+      "gloss": "king",
+      "lemma": "rex",
+      "pos": "noun",
+      "stem": "reg"
+    },
+    {
+      "decl": 3,
+      "gender": "f",
+      "gloss": "city",
+      "lemma": "urbs",
+      "pos": "noun",
+      "stem": "urb"
+    },
+    {
+      "decl": 3,
+      "gender": "m",
+      "gloss": "father",
+      "lemma": "pater",
+      "pos": "noun",
+      "stem": "patr"
+    },
+    {
+      "decl": 3,
+      "gender": "n",
+      "gloss": "race, kind, family",
+      "lemma": "genus",
+      "pos": "noun",
+      "stem": "gener"
+    },
+    {
+      "decl": 3,
+      "gender": "n",
+      "gloss": "shore",
+      "lemma": "litus",
+      "pos": "noun",
+      "stem": "litor"
+    },
+    {
+      "decl": 3,
+      "gender": "m",
+      "gloss": "labour, toil",
+      "lemma": "labor",
+      "pos": "noun",
+      "stem": "labor"
+    },
+    {
+      "decl": 3,
+      "gender": "f",
+      "gloss": "devotion, piety",
+      "lemma": "pietas",
+      "pos": "noun",
+      "stem": "pietat"
+    },
+    {
+      "decl": 3,
+      "gender": "n",
+      "gloss": "divine power, nod",
+      "lemma": "numen",
+      "pos": "noun",
+      "stem": "numin"
+    },
+    {
+      "decl": 3,
+      "gender": "f",
+      "gloss": "part",
+      "lemma": "pars",
+      "pos": "noun",
+      "stem": "part"
+    },
+    {
+      "decl": 3,
+      "gender": "f",
+      "gloss": "Juno",
+      "lemma": "Iuno",
+      "pos": "noun",
+      "stem": "Iunon"
+    },
+    {
+      "decl": 4,
+      "gender": "m",
+      "gloss": "fall, misfortune, case",
+      "lemma": "casus",
+      "pos": "noun",
+      "stem": "cas"
+    },
+    {
+      "decl": 4,
+      "gender": "f",
+      "gloss": "hand, band",
+      "lemma": "manus",
+      "pos": "noun",
+      "stem": "man"
+    },
+    {
+      "decl": 5,
+      "gender": "f",
+      "gloss": "thing, matter",
+      "lemma": "res",
+      "pos": "noun",
+      "stem": "r"
+    },
+    {
+      "decl": 5,
+      "gender": "m",
+      "gloss": "day",
+      "lemma": "dies",
+      "pos": "noun",
+      "stem": "di"
+    },
+    {
+      "decl": "1/2",
+      "gloss": "good",
+      "lemma": "bonus",
+      "pos": "adjective",
+      "stem": "bon"
+    },
+    {
+      "decl": "1/2",
+      "gloss": "great, large",
+      "lemma": "magnus",
+      "pos": "adjective",
+      "stem": "magn"
+    },
+    {
+      "decl": "1/2",
+      "gloss": "first",
+      "lemma": "primus",
+      "pos": "adjective",
+      "stem": "prim"
+    },
+    {
+      "decl": "1/2",
+      "gloss": "high, deep, lofty",
+      "lemma": "altus",
+      "pos": "adjective",
+      "stem": "alt"
+    },
+    {
+      "decl": "1/2",
+      "gloss": "Latin",
+      "lemma": "Latinus",
+      "pos": "adjective",
+      "stem": "Latin"
+    },
+    {
+      "decl": "1/2",
+      "gloss": "Alban",
+      "lemma": "Albanus",
+      "pos": "adjective",
+      "stem": "Alban"
+    },
+    {
+      "decl": "1/2",
+      "gloss": "savage, cruel",
+      "lemma": "saevus",
+      "pos": "adjective",
+      "stem": "saev"
+    },
+    {
+      "decl": "1/2",
+      "gloss": "much, many",
+      "lemma": "multus",
+      "pos": "adjective",
+      "stem": "mult"
+    },
+    {
+      "decl": "1/2",
+      "gloss": "Lavinian",
+      "lemma": "Lavinius",
+      "pos": "adjective",
+      "stem": "Lavini"
+    },
+    {
+      "decl": "1/2",
+      "gloss": "exiled, fugitive",
+      "lemma": "profugus",
+      "pos": "adjective",
+      "stem": "profug"
+    },
+    {
+      "decl": "1/2",
+      "gloss": "so great, such",
+      "lemma": "tantus",
+      "pos": "adjective",
+      "stem": "tant"
+    },
+    {
+      "decl": "1/2",
+      "gloss": "our",
+      "lemma": "noster",
+      "pos": "adjective",
+      "stem": "nostr"
+    },
+    {
+      "decl": 3,
+      "gloss": "mindful, remembering",
+      "irregular": {
+        "memor": {
+          "case": "nominative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "memore": {
+          "case": "ablative",
+          "number": "singular"
+        },
+        "memorem": {
+          "case": "accusative",
+          "number": "singular"
+        },
+        "memores": {
+          "case": "nominative",
+          "number": "plural"
+        },
+        "memori": {
+          "case": "dative",
+          "number": "singular"
+        },
+        "memoribus": {
+          "case": "dative",
+          "number": "plural"
+        },
+        "memoris": {
+          "case": "genitive",
+          "number": "singular"
+        },
+        "memorum": {
+          "case": "genitive",
+          "number": "plural"
+        }
+      },
+      "lemma": "memor",
+      "pos": "adjective",
+      "stem": "memor"
+    },
+    {
+      "decl": 3,
+      "gloss": "distinguished, outstanding",
+      "irregular": {
+        "insigne": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "singular"
+        },
+        "insignem": {
+          "case": "accusative",
+          "number": "singular"
+        },
+        "insignes": {
+          "case": "nominative",
+          "number": "plural"
+        },
+        "insigni": {
+          "case": "ablative",
+          "number": "singular"
+        },
+        "insignia": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "plural"
+        },
+        "insignibus": {
+          "case": "dative",
+          "number": "plural"
+        },
+        "insignis": {
+          "case": "genitive",
+          "number": "singular"
+        },
+        "insignium": {
+          "case": "genitive",
+          "number": "plural"
+        }
+      },
+      "lemma": "insignis",
+      "pos": "adjective",
+      "stem": "insign"
+    },
+    {
+      "decl": 3,
+      "gloss": "heavenly, celestial",
+      "irregular": {
+        "caeleste": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "singular"
+        },
+        "caelestem": {
+          "case": "accusative",
+          "number": "singular"
+        },
+        "caelestes": {
+          "case": "nominative",
+          "number": "plural"
+        },
+        "caelesti": {
+          "case": "ablative",
+          "number": "singular"
+        },
+        "caelestibus": {
+          "case": "dative",
+          "number": "plural"
+        },
+        "caelestis": {
+          "case": "nominative",
+          "number": "singular"
+        },
+        "caelestium": {
+          "case": "genitive",
+          "number": "plural"
+        }
+      },
+      "lemma": "caelestis",
+      "pos": "adjective",
+      "stem": "caelest"
+    },
+    {
+      "decl": 3,
+      "gloss": "all, every",
+      "irregular": {},
+      "lemma": "omnis",
+      "pos": "adjective",
+      "stem": "omn"
+    },
+    {
+      "conj": 1,
+      "gloss": "love",
+      "infinitive": "amare",
+      "lemma": "amo",
+      "perfect": "amav",
+      "pos": "verb",
+      "stem": "am",
+      "supine": "amat"
+    },
+    {
+      "conj": 1,
+      "gloss": "praise",
+      "infinitive": "laudare",
+      "lemma": "laudo",
+      "perfect": "laudav",
+      "pos": "verb",
+      "stem": "laud",
+      "supine": "laudat"
+    },
+    {
+      "conj": 1,
+      "gloss": "toss, throw",
+      "infinitive": "iactare",
+      "lemma": "iacto",
+      "perfect": "iactav",
+      "pos": "verb",
+      "stem": "iact",
+      "supine": "iactat"
+    },
+    {
+      "conj": 1,
+      "gloss": "recall, relate",
+      "infinitive": "memorare",
+      "lemma": "memoro",
+      "perfect": "memorav",
+      "pos": "verb",
+      "stem": "memor",
+      "supine": "memorat"
+    },
+    {
+      "conj": 2,
+      "gloss": "have, hold",
+      "infinitive": "habere",
+      "lemma": "habeo",
+      "perfect": "habu",
+      "pos": "verb",
+      "stem": "hab",
+      "supine": "habit"
+    },
+    {
+      "conj": 2,
+      "gloss": "see",
+      "infinitive": "videre",
+      "lemma": "video",
+      "perfect": "vid",
+      "pos": "verb",
+      "stem": "vid",
+      "supine": "vis"
+    },
+    {
+      "conj": 2,
+      "gloss": "grieve, be pained",
+      "infinitive": "dolere",
+      "lemma": "doleo",
+      "perfect": "dolu",
+      "pos": "verb",
+      "stem": "dol",
+      "supine": "dolit"
+    },
+    {
+      "conj": 2,
+      "gloss": "warn, advise",
+      "infinitive": "monere",
+      "lemma": "moneo",
+      "perfect": "monu",
+      "pos": "verb",
+      "stem": "mon",
+      "supine": "monit"
+    },
+    {
+      "conj": 3,
+      "gloss": "sing, sing of",
+      "infinitive": "canere",
+      "lemma": "cano",
+      "perfect": "cecin",
+      "pos": "verb",
+      "stem": "can",
+      "supine": "cant"
+    },
+    {
+      "conj": 3,
+      "gloss": "lead",
+      "infinitive": "ducere",
+      "lemma": "duco",
+      "perfect": "dux",
+      "pos": "verb",
+      "stem": "duc",
+      "supine": "duct"
+    },
+    {
+      "conj": 3,
+      "gloss": "write",
+      "infinitive": "scribere",
+      "lemma": "scribo",
+      "perfect": "scrips",
+      "pos": "verb",
+      "stem": "scrib",
+      "supine": "script"
+    },
+    {
+      "conj": 3,
+      "gloss": "send",
+      "infinitive": "mittere",
+      "lemma": "mitto",
+      "perfect": "mis",
+      "pos": "verb",
+      "stem": "mitt",
+      "supine": "miss"
+    },
+    {
+      "conj": 3,
+      "gloss": "found, build",
+      "infinitive": "condere",
+      "lemma": "condo",
+      "perfect": "condid",
+      "pos": "verb",
+      "stem": "cond",
+      "supine": "condit"
+    },
+    {
+      "conj": 3,
+      "gloss": "drive, compel",
+      "infinitive": "impellere",
+      "lemma": "impello",
+      "perfect": "impul",
+      "pos": "verb",
+      "stem": "impell",
+      "supine": "impuls"
+    },
+    {
+      "conj": 3,
+      "gloss": "roll, turn over",
+      "infinitive": "volvere",
+      "lemma": "volvo",
+      "perfect": "volv",
+      "pos": "verb",
+      "stem": "volv",
+      "supine": "volut"
+    },
+    {
+      "conj": 3,
+      "gloss": "injure, wound",
+      "infinitive": "laedere",
+      "lemma": "laedo",
+      "perfect": "laes",
+      "pos": "verb",
+      "stem": "laed",
+      "supine": "laes"
+    },
+    {
+      "conj": 3,
+      "gloss": "divide",
+      "infinitive": "dividere",
+      "lemma": "divido",
+      "perfect": "divis",
+      "pos": "verb",
+      "stem": "divid",
+      "supine": "divis"
+    },
+    {
+      "conj": 4,
+      "gloss": "hear, listen",
+      "infinitive": "audire",
+      "lemma": "audio",
+      "perfect": "audiv",
+      "pos": "verb",
+      "stem": "audi",
+      "supine": "audit"
+    },
+    {
+      "conj": 4,
+      "gloss": "come",
+      "infinitive": "venire",
+      "lemma": "venio",
+      "perfect": "ven",
+      "pos": "verb",
+      "stem": "veni",
+      "supine": "vent"
+    },
+    {
+      "conj": 3,
+      "deponent": true,
+      "gloss": "suffer, endure",
+      "infinitive": "pati",
+      "irregular": {
+        "passa": {
+          "gender": "f",
+          "mood": "participle",
+          "number": "singular",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "passum": {
+          "gender": "n",
+          "mood": "participle",
+          "number": "singular",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "passus": {
+          "gender": "m",
+          "mood": "participle",
+          "number": "singular",
+          "tense": "perfect",
+          "voice": "active"
+        }
+      },
+      "lemma": "patior",
+      "perfect": "pass",
+      "pos": "verb",
+      "stem": "pat",
+      "supine": "pass"
+    },
+    {
+      "gloss": "be",
+      "irregular": {
+        "eram": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "eramus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "erant": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "eras": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "erat": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "eratis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "erimus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "future",
+          "voice": "active"
+        },
+        "eris": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "future",
+          "voice": "active"
+        },
+        "erit": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "future",
+          "voice": "active"
+        },
+        "eritis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "future",
+          "voice": "active"
+        },
+        "ero": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "future",
+          "voice": "active"
+        },
+        "erunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "future",
+          "voice": "active"
+        },
+        "es": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "esse": {
+          "mood": "infinitive",
+          "tense": "present",
+          "voice": "active"
+        },
+        "essem": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "1",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "essemus": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "1",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "essent": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "3",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "esses": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "2",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "esset": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "3",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "essetis": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "2",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "est": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "estis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "fuerunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "fui": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "fuimus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "fuisti": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "fuistis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "fuit": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "sim": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "simus": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "sint": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "sis": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "sit": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "sitis": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "sum": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "sumus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "sunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        }
+      },
+      "irregular_verb": true,
+      "lemma": "sum",
+      "pos": "verb"
+    },
+    {
+      "gloss": "go",
+      "irregular": {
+        "eam": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "eamus": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "eant": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "eas": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "eat": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "eatis": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "eo": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "eunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "i": {
+          "mood": "imperative",
+          "number": "singular",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "ibam": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "ibamus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "ibant": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "ibas": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "ibat": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "ibatis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "ibimus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "future",
+          "voice": "active"
+        },
+        "ibis": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "future",
+          "voice": "active"
+        },
+        "ibit": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "future",
+          "voice": "active"
+        },
+        "ibitis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "future",
+          "voice": "active"
+        },
+        "ibo": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "future",
+          "voice": "active"
+        },
+        "ibunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "future",
+          "voice": "active"
+        },
+        "ierunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "ii": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "iimus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "iisti": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "iistis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "iit": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "imus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "ire": {
+          "mood": "infinitive",
+          "tense": "present",
+          "voice": "active"
+        },
+        "irem": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "1",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "iremus": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "1",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "irent": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "3",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "ires": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "2",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "iret": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "3",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "iretis": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "2",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "is": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "it": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "ite": {
+          "mood": "imperative",
+          "number": "plural",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "itis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        }
+      },
+      "irregular_verb": true,
+      "lemma": "eo",
+      "pos": "verb"
+    },
+    {
+      "gloss": "approach, go to",
+      "irregular": {
+        "adeo": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "adeunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "adibam": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "adibat": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "adibo": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "future",
+          "voice": "active"
+        },
+        "adierunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "adii": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "adiimus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "adiisti": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "adiit": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "adimus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "adire": {
+          "mood": "infinitive",
+          "tense": "present",
+          "voice": "active"
+        },
+        "adis": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "adit": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "aditis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        }
+      },
+      "irregular_verb": true,
+      "lemma": "adeo",
+      "pos": "verb"
+    },
+    {
+      "gloss": "bring in, carry",
+      "irregular": {
+        "inferimus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "infero": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "inferre": {
+          "mood": "infinitive",
+          "tense": "present",
+          "voice": "active"
+        },
+        "inferrem": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "1",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "inferremus": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "1",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "inferrent": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "3",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "inferres": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "2",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "inferret": {
+          "mood": "subjunctive",
+          "number": "singular",
+          "person": "3",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "inferretis": {
+          "mood": "subjunctive",
+          "number": "plural",
+          "person": "2",
+          "tense": "imperfect",
+          "voice": "active"
+        },
+        "infers": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "infert": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "infertis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "inferunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "intulerunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "intuli": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "intulimus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "intulisti": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "intulistis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "intulit": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "perfect",
+          "voice": "active"
+        }
+      },
+      "irregular_verb": true,
+      "lemma": "infero",
+      "pos": "verb",
+      "supine": "illat"
+    },
+    {
+      "gloss": "bear, carry",
+      "irregular": {
+        "ferimus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "fero": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "ferre": {
+          "mood": "infinitive",
+          "tense": "present",
+          "voice": "active"
+        },
+        "fers": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "fert": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "fertis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "ferunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "tulerunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "tuli": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "tulimus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "tulisti": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "tulit": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "fertur": {
+          "case": null,
+          "number": "singular",
+          "gender": null,
+          "person": "3",
+          "tense": "present",
+          "mood": "indicative",
+          "voice": "passive"
+        }
+      },
+      "irregular_verb": true,
+      "lemma": "fero",
+      "pos": "verb",
+      "supine": "lat"
+    },
+    {
+      "gloss": "wish, want",
+      "irregular": {
+        "velle": {
+          "mood": "infinitive",
+          "tense": "present",
+          "voice": "active"
+        },
+        "vis": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "volo": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "volui": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "perfect",
+          "voice": "active"
+        },
+        "volumus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "volunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "vult": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "vultis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        }
+      },
+      "irregular_verb": true,
+      "lemma": "volo",
+      "pos": "verb"
+    },
+    {
+      "gloss": "be able",
+      "irregular": {
+        "posse": {
+          "mood": "infinitive",
+          "tense": "present",
+          "voice": "active"
+        },
+        "possum": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "possumus": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "1",
+          "tense": "present",
+          "voice": "active"
+        },
+        "possunt": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "potes": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "potest": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "3",
+          "tense": "present",
+          "voice": "active"
+        },
+        "potestis": {
+          "mood": "indicative",
+          "number": "plural",
+          "person": "2",
+          "tense": "present",
+          "voice": "active"
+        },
+        "potui": {
+          "mood": "indicative",
+          "number": "singular",
+          "person": "1",
+          "tense": "perfect",
+          "voice": "active"
+        }
+      },
+      "irregular_verb": true,
+      "lemma": "possum",
+      "pos": "verb"
+    },
+    {
+      "gloss": "who, which",
+      "irregular": {
+        "cui": {
+          "case": "dative",
+          "number": "singular"
+        },
+        "qua": {
+          "case": "ablative",
+          "gender": "f",
+          "number": "singular"
+        },
+        "quae": {
+          "case": "nominative",
+          "gender": "f",
+          "number": "singular"
+        },
+        "quam": {
+          "case": "accusative",
+          "gender": "f",
+          "number": "singular"
+        },
+        "quarum": {
+          "case": "genitive",
+          "gender": "f",
+          "number": "plural"
+        },
+        "quas": {
+          "case": "accusative",
+          "gender": "f",
+          "number": "plural"
+        },
+        "quem": {
+          "case": "accusative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "qui": {
+          "case": "nominative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "quibus": {
+          "case": "dative",
+          "number": "plural"
+        },
+        "quid": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "singular"
+        },
+        "quo": {
+          "case": "ablative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "quod": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "singular"
+        },
+        "quorum": {
+          "case": "genitive",
+          "gender": "m",
+          "number": "plural"
+        },
+        "quos": {
+          "case": "accusative",
+          "gender": "m",
+          "number": "plural"
+        }
+      },
+      "lemma": "qui",
+      "pos": "pronoun"
+    },
+    {
+      "gloss": "I",
+      "irregular": {
+        "ego": {
+          "case": "nominative",
+          "number": "singular",
+          "person": "1"
+        },
+        "me": {
+          "case": "accusative",
+          "number": "singular",
+          "person": "1"
+        },
+        "mei": {
+          "case": "genitive",
+          "number": "singular",
+          "person": "1"
+        },
+        "mihi": {
+          "case": "dative",
+          "number": "singular",
+          "person": "1"
+        },
+        "nobis": {
+          "case": "dative",
+          "number": "plural",
+          "person": "1"
+        },
+        "nos": {
+          "case": "nominative",
+          "number": "plural",
+          "person": "1"
+        },
+        "nostri": {
+          "case": "genitive",
+          "number": "plural",
+          "person": "1"
+        }
+      },
+      "lemma": "ego",
+      "pos": "pronoun"
+    },
+    {
+      "gloss": "you (sg)",
+      "irregular": {
+        "te": {
+          "case": "accusative",
+          "number": "singular",
+          "person": "2"
+        },
+        "tibi": {
+          "case": "dative",
+          "number": "singular",
+          "person": "2"
+        },
+        "tu": {
+          "case": "nominative",
+          "number": "singular",
+          "person": "2"
+        },
+        "tui": {
+          "case": "genitive",
+          "number": "singular",
+          "person": "2"
+        },
+        "vestri": {
+          "case": "genitive",
+          "number": "plural",
+          "person": "2"
+        },
+        "vobis": {
+          "case": "dative",
+          "number": "plural",
+          "person": "2"
+        },
+        "vos": {
+          "case": "nominative",
+          "number": "plural",
+          "person": "2"
+        }
+      },
+      "lemma": "tu",
+      "pos": "pronoun"
+    },
+    {
+      "gloss": "he, she, it; that",
+      "irregular": {
+        "ea": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "plural"
+        },
+        "eae": {
+          "case": "nominative",
+          "gender": "f",
+          "number": "plural"
+        },
+        "eam": {
+          "case": "accusative",
+          "gender": "f",
+          "number": "singular"
+        },
+        "earum": {
+          "case": "genitive",
+          "gender": "f",
+          "number": "plural"
+        },
+        "eas": {
+          "case": "accusative",
+          "gender": "f",
+          "number": "plural"
+        },
+        "ei": {
+          "case": "dative",
+          "number": "singular"
+        },
+        "eis": {
+          "case": "dative",
+          "number": "plural"
+        },
+        "eius": {
+          "case": "genitive",
+          "number": "singular"
+        },
+        "eo": {
+          "case": "ablative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "eorum": {
+          "case": "genitive",
+          "gender": "m",
+          "number": "plural"
+        },
+        "eos": {
+          "case": "accusative",
+          "gender": "m",
+          "number": "plural"
+        },
+        "eum": {
+          "case": "accusative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "id": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "singular"
+        },
+        "ii": {
+          "case": "nominative",
+          "gender": "m",
+          "number": "plural"
+        },
+        "is": {
+          "case": "nominative",
+          "gender": "m",
+          "number": "singular"
+        }
+      },
+      "lemma": "is",
+      "pos": "pronoun"
+    },
+    {
+      "gloss": "that (man), he",
+      "irregular": {
+        "illa": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "plural"
+        },
+        "illae": {
+          "case": "nominative",
+          "gender": "f",
+          "number": "plural"
+        },
+        "illam": {
+          "case": "accusative",
+          "gender": "f",
+          "number": "singular"
+        },
+        "illarum": {
+          "case": "genitive",
+          "gender": "f",
+          "number": "plural"
+        },
+        "illas": {
+          "case": "accusative",
+          "gender": "f",
+          "number": "plural"
+        },
+        "ille": {
+          "case": "nominative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "illi": {
+          "case": "nominative",
+          "gender": "m",
+          "number": "plural"
+        },
+        "illis": {
+          "case": "dative",
+          "number": "plural"
+        },
+        "illius": {
+          "case": "genitive",
+          "number": "singular"
+        },
+        "illo": {
+          "case": "ablative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "illorum": {
+          "case": "genitive",
+          "gender": "m",
+          "number": "plural"
+        },
+        "illos": {
+          "case": "accusative",
+          "gender": "m",
+          "number": "plural"
+        },
+        "illud": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "singular"
+        },
+        "illum": {
+          "case": "accusative",
+          "gender": "m",
+          "number": "singular"
+        }
+      },
+      "lemma": "ille",
+      "pos": "pronoun"
+    },
+    {
+      "gloss": "this",
+      "irregular": {
+        "hac": {
+          "case": "ablative",
+          "gender": "f",
+          "number": "singular"
+        },
+        "haec": {
+          "case": "nominative",
+          "gender": "f",
+          "number": "singular"
+        },
+        "hanc": {
+          "case": "accusative",
+          "gender": "f",
+          "number": "singular"
+        },
+        "hic": {
+          "case": "nominative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "hoc": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "singular"
+        },
+        "huic": {
+          "case": "dative",
+          "number": "singular"
+        },
+        "huius": {
+          "case": "genitive",
+          "number": "singular"
+        },
+        "hunc": {
+          "case": "accusative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "his": {
+          "case": "ablative",
+          "number": "plural"
+        }
+      },
+      "lemma": "hic",
+      "pos": "pronoun"
+    },
+    {
+      "decl": 2,
+      "gender": "m",
+      "gloss": "god",
+      "irregular": {
+        "dei": {
+          "case": "genitive",
+          "gender": "m",
+          "number": "singular"
+        },
+        "deo": {
+          "case": "ablative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "deorum": {
+          "case": "genitive",
+          "gender": "m",
+          "number": "plural"
+        },
+        "deos": {
+          "case": "accusative",
+          "gender": "m",
+          "number": "plural"
+        },
+        "deum": {
+          "case": "genitive",
+          "gender": "m",
+          "number": "plural"
+        },
+        "deus": {
+          "case": "nominative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "di": {
+          "case": "nominative",
+          "gender": "m",
+          "number": "plural"
+        },
+        "dis": {
+          "case": "dative",
+          "gender": "m",
+          "number": "plural"
+        }
+      },
+      "lemma": "deus",
+      "pos": "noun",
+      "stem": "de"
+    },
+    {
+      "decl": 3,
+      "gender": "f",
+      "gloss": "force, power",
+      "irregular": {
+        "vi": {
+          "case": "ablative",
+          "number": "singular"
+        },
+        "vim": {
+          "case": "accusative",
+          "number": "singular"
+        },
+        "vires": {
+          "case": "nominative",
+          "number": "plural"
+        },
+        "viribus": {
+          "case": "dative",
+          "number": "plural"
+        },
+        "virium": {
+          "case": "genitive",
+          "number": "plural"
+        },
+        "vis": {
+          "case": "genitive",
+          "number": "singular"
+        }
+      },
+      "lemma": "vis",
+      "pos": "noun",
+      "stem": "vi"
+    },
+    {
+      "decl": 2,
+      "gender": "n",
+      "gloss": "arms, weapons (pl.)",
+      "irregular": {
+        "arma": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "plural"
+        },
+        "armis": {
+          "case": "dative",
+          "gender": "n",
+          "number": "plural"
+        },
+        "armorum": {
+          "case": "genitive",
+          "gender": "n",
+          "number": "plural"
+        }
+      },
+      "lemma": "arma",
+      "plural_only": true,
+      "pos": "noun",
+      "stem": "arm"
+    },
+    {
+      "decl": 3,
+      "gender": "n",
+      "gloss": "walls, fortifications (pl.)",
+      "irregular": {
+        "moenia": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "plural"
+        },
+        "moenibus": {
+          "case": "dative",
+          "gender": "n",
+          "number": "plural"
+        },
+        "moenium": {
+          "case": "genitive",
+          "gender": "n",
+          "number": "plural"
+        }
+      },
+      "lemma": "moenia",
+      "plural_only": true,
+      "pos": "noun",
+      "stem": "moeni"
+    },
+    {
+      "decl": 1,
+      "gender": "m",
+      "gloss": "Catiline",
+      "lemma": "Catilina",
+      "pos": "noun",
+      "stem": "Catilin"
+    },
+    {
+      "decl": 3,
+      "gloss": "three",
+      "irregular": {
+        "tres": {
+          "case": "accusative",
+          "number": "plural"
+        },
+        "tria": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "plural"
+        },
+        "tribus": {
+          "case": "dative",
+          "number": "plural"
+        },
+        "trium": {
+          "case": "genitive",
+          "number": "plural"
+        }
+      },
+      "lemma": "tres",
+      "pos": "adjective",
+      "stem": "tr"
+    },
+    {
+      "gloss": "from, by (abl.)",
+      "lemma": "ab",
+      "pos": "preposition"
+    },
+    {
+      "gloss": "from, by (abl.)",
+      "lemma": "a",
+      "pos": "preposition"
+    },
+    {
+      "gloss": "to, toward (acc.)",
+      "lemma": "ad",
+      "pos": "preposition"
+    },
+    {
+      "gloss": "in, into (abl./acc.)",
+      "lemma": "in",
+      "pos": "preposition"
+    },
+    {
+      "gloss": "with (abl.)",
+      "lemma": "cum",
+      "pos": "preposition"
+    },
+    {
+      "gloss": "without (abl.)",
+      "lemma": "sine",
+      "pos": "preposition"
+    },
+    {
+      "gloss": "for, on behalf of (abl.)",
+      "lemma": "pro",
+      "pos": "preposition"
+    },
+    {
+      "gloss": "on account of (acc.)",
+      "lemma": "ob",
+      "pos": "preposition"
+    },
+    {
+      "gloss": "through (acc.)",
+      "lemma": "per",
+      "pos": "preposition"
+    },
+    {
+      "gloss": "and",
+      "lemma": "et",
+      "pos": "conjunction"
+    },
+    {
+      "gloss": "and",
+      "lemma": "atque",
+      "pos": "conjunction"
+    },
+    {
+      "gloss": "also",
+      "lemma": "quoque",
+      "pos": "adverb"
+    },
+    {
+      "gloss": "whence, from where",
+      "lemma": "unde",
+      "pos": "adverb"
+    },
+    {
+      "gloss": "while, until",
+      "lemma": "dum",
+      "pos": "conjunction"
+    },
+    {
+      "gloss": "not",
+      "lemma": "non",
+      "pos": "adverb"
+    },
+    {
+      "gloss": "at last, finally",
+      "lemma": "tandem",
+      "pos": "adverb"
+    },
+    {
+      "gloss": "all the way, until",
+      "lemma": "usque",
+      "pos": "adverb"
+    },
+    {
+      "gloss": "so many",
+      "lemma": "tot",
+      "pos": "adjective"
+    },
+    {
+      "gloss": "but",
+      "lemma": "sed",
+      "pos": "conjunction"
+    },
+    {
+      "lemma": "ambulo",
+      "pos": "verb",
+      "conj": 1,
+      "stem": "ambul",
+      "perfect": "ambulav",
+      "supine": "ambulat",
+      "infinitive": "ambulare",
+      "gloss": "walk"
+    },
+    {
+      "lemma": "aqua",
+      "pos": "noun",
+      "decl": 1,
+      "gender": "f",
+      "stem": "aqu",
+      "gloss": "water"
+    },
+    {
+      "lemma": "antiquus",
+      "pos": "adjective",
+      "decl": "1/2",
+      "stem": "antiqu",
+      "gloss": "ancient, old"
+    },
+    {
+      "lemma": "Tyrius",
+      "pos": "adjective",
+      "decl": "1/2",
+      "stem": "Tyri",
+      "gloss": "Tyrian, of Tyre"
+    },
+    {
+      "lemma": "teneo",
+      "pos": "verb",
+      "conj": 2,
+      "stem": "ten",
+      "perfect": "tenu",
+      "supine": "tent",
+      "infinitive": "tenere",
+      "gloss": "hold, possess, keep"
+    },
+    {
+      "lemma": "colonus",
+      "pos": "noun",
+      "decl": 2,
+      "gender": "m",
+      "stem": "colon",
+      "gloss": "colonist, settler"
+    },
+    {
+      "lemma": "Karthago",
+      "pos": "noun",
+      "decl": 3,
+      "gender": "f",
+      "stem": "Karthagin",
+      "gloss": "Carthage"
+    },
+    {
+      "lemma": "contra",
+      "pos": "preposition",
+      "gloss": "opposite, facing, against"
+    },
+    {
+      "lemma": "Tiberinus",
+      "pos": "adjective",
+      "decl": "1/2",
+      "stem": "Tiberin",
+      "gloss": "Tiberine, of the Tiber"
+    },
+    {
+      "lemma": "longe",
+      "pos": "adverb",
+      "gloss": "far off, afar, by far"
+    },
+    {
+      "lemma": "ostium",
+      "pos": "noun",
+      "decl": 2,
+      "gender": "n",
+      "stem": "osti",
+      "gloss": "mouth, entrance, harbor"
+    },
+    {
+      "lemma": "dives",
+      "pos": "adjective",
+      "decl": 3,
+      "stem": "divit",
+      "gloss": "rich, wealthy"
+    },
+    {
+      "lemma": "ops",
+      "pos": "noun",
+      "decl": "3i",
+      "gender": "f",
+      "stem": "op",
+      "gloss": "wealth, resources, power, aid",
+      "irregular": {
+        "opum": {
+          "case": "genitive",
+          "number": "plural",
+          "gender": "f"
+        },
+        "opes": {
+          "case": "accusative",
+          "number": "plural",
+          "gender": "f"
+        }
+      }
+    },
+    {
+      "lemma": "studium",
+      "pos": "noun",
+      "decl": 2,
+      "gender": "n",
+      "stem": "studi",
+      "gloss": "eagerness, pursuit, study, zeal"
+    },
+    {
+      "lemma": "asper",
+      "pos": "adjective",
+      "decl": "1/2",
+      "stem": "asper",
+      "gloss": "fierce, rough, harsh"
+    },
+    {
+      "lemma": "asperrimus",
+      "pos": "adjective",
+      "decl": "1/2",
+      "stem": "asperrim",
+      "gloss": "very fierce, most harsh"
+    },
+    {
+      "lemma": "magis",
+      "pos": "adverb",
+      "gloss": "more, rather"
+    },
+    {
+      "lemma": "unus",
+      "pos": "adjective",
+      "decl": "1/2",
+      "stem": "un",
+      "gloss": "one, single, alone"
+    },
+    {
+      "lemma": "posthabeo",
+      "pos": "verb",
+      "conj": 2,
+      "stem": "posthab",
+      "perfect": "posthabu",
+      "supine": "posthabit",
+      "infinitive": "posthabere",
+      "gloss": "place after, esteem less"
+    },
+    {
+      "lemma": "colo",
+      "pos": "verb",
+      "conj": 3,
+      "stem": "col",
+      "perfect": "colu",
+      "supine": "cult",
+      "infinitive": "colere",
+      "gloss": "cherish, cultivate, honor"
+    },
+    {
+      "lemma": "Samos",
+      "pos": "noun",
+      "decl": 2,
+      "gender": "f",
+      "stem": "Sam",
+      "gloss": "Samos (island sacred to Juno)"
+    },
+    {
+      "lemma": "currus",
+      "pos": "noun",
+      "decl": 4,
+      "gender": "m",
+      "stem": "curr",
+      "gloss": "chariot, car"
+    },
+    {
+      "lemma": "regnum",
+      "pos": "noun",
+      "decl": 2,
+      "gender": "n",
+      "stem": "regn",
+      "gloss": "kingdom, realm, royal power"
+    },
+    {
+      "lemma": "dea",
+      "pos": "noun",
+      "decl": 1,
+      "gender": "f",
+      "stem": "de",
+      "gloss": "goddess"
+    },
+    {
+      "lemma": "gens",
+      "pos": "noun",
+      "decl": "3i",
+      "gender": "f",
+      "stem": "gent",
+      "gloss": "clan, race, nation, people"
+    },
+    {
+      "lemma": "si",
+      "pos": "conjunction",
+      "gloss": "if"
+    },
+    {
+      "lemma": "quis",
+      "pos": "pronoun",
+      "gloss": "any, anyone, anything",
+      "irregular": {
+        "qua": {
+          "case": "nominative",
+          "gender": "f",
+          "number": "singular"
+        },
+        "qui": {
+          "case": "nominative",
+          "gender": "m",
+          "number": "singular"
+        },
+        "quid": {
+          "case": "nominative",
+          "gender": "n",
+          "number": "singular"
+        },
+        "quo": {
+          "case": "ablative",
+          "gender": "m",
+          "number": "singular"
+        }
+      }
+    },
+    {
+      "lemma": "sino",
+      "pos": "verb",
+      "conj": 3,
+      "stem": "sin",
+      "perfect": "siv",
+      "supine": "sit",
+      "infinitive": "sinere",
+      "gloss": "allow, permit"
+    },
+    {
+      "lemma": "iam",
+      "pos": "adverb",
+      "gloss": "now, already"
+    },
+    {
+      "lemma": "tum",
+      "pos": "adverb",
+      "gloss": "then, at that time"
+    },
+    {
+      "lemma": "tendo",
+      "pos": "verb",
+      "conj": 3,
+      "stem": "tend",
+      "perfect": "tetend",
+      "supine": "tent",
+      "infinitive": "tendere",
+      "gloss": "stretch, aim, strive"
+    },
+    {
+      "lemma": "foveo",
+      "pos": "verb",
+      "conj": 2,
+      "stem": "fov",
+      "perfect": "fov",
+      "supine": "fot",
+      "infinitive": "fovere",
+      "gloss": "cherish, foster, warm"
+    },
+    {
+      "lemma": "progenies",
+      "pos": "noun",
+      "decl": 5,
+      "gender": "f",
+      "stem": "progeni",
+      "gloss": "offspring, lineage, progeny"
+    },
+    {
+      "lemma": "enim",
+      "pos": "conjunction",
+      "gloss": "for, indeed, truly"
+    },
+    {
+      "lemma": "Troianus",
+      "pos": "adjective",
+      "decl": "1/2",
+      "stem": "Troian",
+      "gloss": "Trojan"
+    },
+    {
+      "lemma": "sanguis",
+      "pos": "noun",
+      "decl": 3,
+      "gender": "m",
+      "stem": "sanguin",
+      "gloss": "blood, lineage"
+    },
+    {
+      "lemma": "olim",
+      "pos": "adverb",
+      "gloss": "at some time, once, hereafter"
+    },
+    {
+      "lemma": "verto",
+      "pos": "verb",
+      "conj": 3,
+      "stem": "vert",
+      "perfect": "vert",
+      "supine": "vers",
+      "infinitive": "vertere",
+      "gloss": "turn, overturn, destroy"
+    },
+    {
+      "lemma": "arx",
+      "pos": "noun",
+      "decl": "3i",
+      "gender": "f",
+      "stem": "arc",
+      "gloss": "citadel, fortress, height"
+    },
+    {
+      "lemma": "hinc",
+      "pos": "adverb",
+      "gloss": "from here, hence"
+    },
+    {
+      "lemma": "late",
+      "pos": "adverb",
+      "gloss": "widely, far and wide"
+    },
+    {
+      "lemma": "superbus",
+      "pos": "adjective",
+      "decl": "1/2",
+      "stem": "superb",
+      "gloss": "proud, haughty, exalted"
+    },
+    {
+      "lemma": "excidium",
+      "pos": "noun",
+      "decl": 2,
+      "gender": "n",
+      "stem": "excidi",
+      "gloss": "destruction, ruin, downfall"
+    },
+    {
+      "lemma": "Libya",
+      "pos": "noun",
+      "decl": 1,
+      "gender": "f",
+      "stem": "Liby",
+      "gloss": "Libya"
+    },
+    {
+      "lemma": "sic",
+      "pos": "adverb",
+      "gloss": "thus, so, in this way"
+    },
+    {
+      "lemma": "Parca",
+      "pos": "noun",
+      "decl": 1,
+      "gender": "f",
+      "stem": "Parc",
+      "gloss": "one of the Fates / pl. the Fates"
+    },
+    {
+      "lemma": "metuo",
+      "pos": "verb",
+      "conj": 3,
+      "stem": "metu",
+      "perfect": "metu",
+      "infinitive": "metuere",
+      "gloss": "fear, dread"
+    },
+    {
+      "lemma": "vetus",
+      "pos": "adjective",
+      "decl": 3,
+      "stem": "veter",
+      "gloss": "old, ancient, former"
+    },
+    {
+      "lemma": "Saturnia",
+      "pos": "noun",
+      "decl": 1,
+      "gender": "f",
+      "stem": "Saturni",
+      "gloss": "daughter of Saturn (Juno)"
+    },
+    {
+      "lemma": "carus",
+      "pos": "adjective",
+      "decl": "1/2",
+      "stem": "car",
+      "gloss": "dear, beloved"
+    },
+    {
+      "lemma": "gero",
+      "pos": "verb",
+      "conj": 3,
+      "stem": "ger",
+      "perfect": "gess",
+      "supine": "gest",
+      "infinitive": "gerere",
+      "gloss": "carry on, wage, bear"
+    },
+    {
+      "lemma": "Argi",
+      "pos": "noun",
+      "decl": 2,
+      "gender": "m",
+      "stem": "Arg",
+      "plural_only": true,
+      "gloss": "Argos, the Greeks",
+      "irregular": {
+        "argis": {
+          "case": "ablative",
+          "number": "plural",
+          "gender": "m"
+        }
+      }
+    },
+    {
+      "lemma": "necdum",
+      "pos": "conjunction",
+      "gloss": "not yet, nor yet"
+    },
+    {
+      "lemma": "etiam",
+      "pos": "conjunction",
+      "gloss": "even, also, yet"
+    },
+    {
+      "lemma": "dolor",
+      "pos": "noun",
+      "decl": 3,
+      "gender": "m",
+      "stem": "dolor",
+      "gloss": "grief, pain, sorrow"
+    },
+    {
+      "lemma": "excido",
+      "pos": "verb",
+      "conj": 3,
+      "stem": "excid",
+      "perfect": "excid",
+      "infinitive": "excidere",
+      "gloss": "fall out, perish, escape from memory"
+    },
+    {
+      "lemma": "maneo",
+      "pos": "verb",
+      "conj": 2,
+      "stem": "man",
+      "perfect": "mans",
+      "supine": "mans",
+      "infinitive": "manere",
+      "gloss": "remain, stay, endure"
+    },
+    {
+      "lemma": "mens",
+      "pos": "noun",
+      "decl": "3i",
+      "gender": "f",
+      "stem": "ment",
+      "gloss": "mind, heart, disposition"
+    },
+    {
+      "lemma": "repono",
+      "pos": "verb",
+      "conj": 3,
+      "stem": "repon",
+      "perfect": "reposu",
+      "supine": "repost",
+      "infinitive": "reponere",
+      "gloss": "put back, store up, hide away"
+    },
+    {
+      "lemma": "iudicium",
+      "pos": "noun",
+      "decl": 2,
+      "gender": "n",
+      "stem": "iudici",
+      "gloss": "judgment, decision, verdict"
+    },
+    {
+      "lemma": "Paris",
+      "pos": "noun",
+      "decl": 3,
+      "gender": "m",
+      "stem": "Parid",
+      "gloss": "Paris (Trojan prince)"
+    },
+    {
+      "lemma": "sperno",
+      "pos": "verb",
+      "conj": 3,
+      "stem": "spern",
+      "perfect": "sprev",
+      "supine": "spret",
+      "infinitive": "spernere",
+      "gloss": "scorn, despise, spurn"
+    },
+    {
+      "lemma": "iniuria",
+      "pos": "noun",
+      "decl": 1,
+      "gender": "f",
+      "stem": "iniuri",
+      "gloss": "injury, insult, injustice, wrong"
+    },
+    {
+      "lemma": "forma",
+      "pos": "noun",
+      "decl": 1,
+      "gender": "f",
+      "stem": "form",
+      "gloss": "beauty, form, shape"
+    },
+    {
+      "lemma": "invisus",
+      "pos": "adjective",
+      "decl": "1/2",
+      "stem": "invis",
+      "gloss": "hated, odious, hostile"
+    },
+    {
+      "lemma": "rapio",
+      "pos": "verb",
+      "conj": 3,
+      "stem": "rap",
+      "perfect": "rapu",
+      "supine": "rapt",
+      "infinitive": "rapere",
+      "gloss": "snatch, seize, carry off"
+    },
+    {
+      "lemma": "Ganymedes",
+      "pos": "noun",
+      "decl": 3,
+      "gender": "m",
+      "stem": "Ganymed",
+      "gloss": "Ganymede (Trojan youth cupbearer to Jupiter)"
+    },
+    {
+      "lemma": "honor",
+      "pos": "noun",
+      "decl": 3,
+      "gender": "m",
+      "stem": "honor",
+      "gloss": "honor, mark of respect, office"
+    },
+    {
+      "lemma": "accendo",
+      "pos": "verb",
+      "conj": 3,
+      "stem": "accend",
+      "perfect": "accend",
+      "supine": "accens",
+      "infinitive": "accendere",
+      "gloss": "kindle, inflame, enrage"
+    },
+    {
+      "lemma": "super",
+      "pos": "adverb",
+      "gloss": "above, moreover, besides"
+    },
+    {
+      "lemma": "aequor",
+      "pos": "noun",
+      "decl": 3,
+      "gender": "n",
+      "stem": "aequor",
+      "gloss": "sea, level surface, plain"
+    },
+    {
+      "lemma": "totus",
+      "pos": "adjective",
+      "decl": "1/2",
+      "stem": "tot",
+      "gloss": "whole, entire, all"
+    },
+    {
+      "lemma": "Tros",
+      "pos": "noun",
+      "decl": 3,
+      "gender": "m",
+      "stem": "Tro",
+      "gloss": "Trojan / pl. the Trojans",
+      "irregular": {
+        "troas": {
+          "case": "accusative",
+          "gender": "m",
+          "number": "plural"
+        }
+      }
+    },
+    {
+      "lemma": "reliquiae",
+      "pos": "noun",
+      "decl": 1,
+      "gender": "f",
+      "stem": "reliqui",
+      "plural_only": true,
+      "gloss": "remains, relics, survivors"
+    },
+    {
+      "lemma": "Danai",
+      "pos": "noun",
+      "decl": 2,
+      "gender": "m",
+      "stem": "Dana",
+      "plural_only": true,
+      "gloss": "the Danai, the Greeks",
+      "irregular": {
+        "danaum": {
+          "case": "genitive",
+          "gender": "m",
+          "number": "plural"
+        }
+      }
+    },
+    {
+      "lemma": "immitis",
+      "pos": "adjective",
+      "decl": 3,
+      "stem": "immit",
+      "gloss": "cruel, pitiless, harsh"
+    },
+    {
+      "lemma": "Achilles",
+      "pos": "noun",
+      "decl": 3,
+      "gender": "m",
+      "stem": "Achill",
+      "gloss": "Achilles (Greek hero)",
+      "irregular": {
+        "achilli": {
+          "case": "genitive",
+          "gender": "m",
+          "number": "singular"
+        }
+      }
+    },
+    {
+      "lemma": "arceo",
+      "pos": "verb",
+      "conj": 2,
+      "stem": "arc",
+      "perfect": "arcu",
+      "infinitive": "arcere",
+      "gloss": "keep off, hold back, ward off"
+    },
+    {
+      "lemma": "annus",
+      "pos": "noun",
+      "decl": 2,
+      "gender": "m",
+      "stem": "ann",
+      "gloss": "year"
+    },
+    {
+      "lemma": "erro",
+      "pos": "verb",
+      "conj": 1,
+      "stem": "err",
+      "perfect": "errav",
+      "supine": "errat",
+      "infinitive": "errare",
+      "gloss": "wander, stray, err"
+    },
+    {
+      "lemma": "ago",
+      "pos": "verb",
+      "conj": 3,
+      "stem": "ag",
+      "perfect": "eg",
+      "supine": "act",
+      "infinitive": "agere",
+      "gloss": "drive, do, conduct, act"
+    },
+    {
+      "lemma": "mare",
+      "pos": "noun",
+      "decl": "3i",
+      "gender": "n",
+      "stem": "mar",
+      "gloss": "sea"
+    },
+    {
+      "lemma": "circum",
+      "pos": "preposition",
+      "gloss": "around, about"
+    },
+    {
+      "lemma": "moles",
+      "pos": "noun",
+      "decl": "3i",
+      "gender": "f",
+      "stem": "mol",
+      "gloss": "mass, weight, effort, burden"
+    },
+    {
+      "lemma": "Romanus",
+      "pos": "adjective",
+      "decl": "1/2",
+      "stem": "Roman",
+      "gloss": "Roman"
+    }
+  ]
+}

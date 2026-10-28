@@ -1,0 +1,967 @@
+[
+  {
+    "form": "puella",
+    "expected_lemma": "puella",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "nominative"
+  },
+  {
+    "form": "puellae",
+    "expected_lemma": "puella",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "puellam",
+    "expected_lemma": "puella",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "puellas",
+    "expected_lemma": "puella",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "servus",
+    "expected_lemma": "servus",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "nominative"
+  },
+  {
+    "form": "servum",
+    "expected_lemma": "servus",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "servi",
+    "expected_lemma": "servus",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "bello",
+    "expected_lemma": "bellum",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "ablative"
+  },
+  {
+    "form": "bella",
+    "expected_lemma": "bellum",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "nominative"
+  },
+  {
+    "form": "regis",
+    "expected_lemma": "rex",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "regem",
+    "expected_lemma": "rex",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "urbem",
+    "expected_lemma": "urbs",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "patres",
+    "expected_lemma": "pater",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "nominative"
+  },
+  {
+    "form": "generis",
+    "expected_lemma": "genus",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "litora",
+    "expected_lemma": "litus",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "nominative"
+  },
+  {
+    "form": "casus",
+    "expected_lemma": "casus",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "nominative"
+  },
+  {
+    "form": "casuum",
+    "expected_lemma": "casus",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "manum",
+    "expected_lemma": "manus",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "rerum",
+    "expected_lemma": "res",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "diei",
+    "expected_lemma": "dies",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "Troiae",
+    "expected_lemma": "Troia",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "oris",
+    "expected_lemma": "ora",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "ablative"
+  },
+  {
+    "form": "Italiam",
+    "expected_lemma": "Italia",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "iram",
+    "expected_lemma": "ira",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "causas",
+    "expected_lemma": "causa",
+    "expected_pos": "noun",
+    "category": "nouns",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "bonus",
+    "expected_lemma": "bonus",
+    "expected_pos": "adjective",
+    "category": "adjectives",
+    "expected_case": "nominative"
+  },
+  {
+    "form": "bonam",
+    "expected_lemma": "bonus",
+    "expected_pos": "adjective",
+    "category": "adjectives",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "primus",
+    "expected_lemma": "primus",
+    "expected_pos": "adjective",
+    "category": "adjectives",
+    "expected_case": "nominative"
+  },
+  {
+    "form": "altae",
+    "expected_lemma": "altus",
+    "expected_pos": "adjective",
+    "category": "adjectives",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "saevae",
+    "expected_lemma": "saevus",
+    "expected_pos": "adjective",
+    "category": "adjectives",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "multa",
+    "expected_lemma": "multus",
+    "expected_pos": "adjective",
+    "category": "adjectives",
+    "expected_case": "nominative"
+  },
+  {
+    "form": "insignem",
+    "expected_lemma": "insignis",
+    "expected_pos": "adjective",
+    "category": "adjectives",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "memorem",
+    "expected_lemma": "memor",
+    "expected_pos": "adjective",
+    "category": "adjectives",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "amo",
+    "expected_lemma": "amo",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "amas",
+    "expected_lemma": "amo",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "amat",
+    "expected_lemma": "amo",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "amant",
+    "expected_lemma": "amo",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "amabam",
+    "expected_lemma": "amo",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "imperfect",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "amabo",
+    "expected_lemma": "amo",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "future",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "amem",
+    "expected_lemma": "amo",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "present",
+    "expected_mood": "subjunctive"
+  },
+  {
+    "form": "amavi",
+    "expected_lemma": "amo",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "perfect",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "habet",
+    "expected_lemma": "habeo",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "ducit",
+    "expected_lemma": "duco",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "ducunt",
+    "expected_lemma": "duco",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "audit",
+    "expected_lemma": "audio",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "audiunt",
+    "expected_lemma": "audio",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "canit",
+    "expected_lemma": "cano",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "venit",
+    "expected_lemma": "venio",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "conderet",
+    "expected_lemma": "condo",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "imperfect",
+    "expected_mood": "subjunctive"
+  },
+  {
+    "form": "impulerit",
+    "expected_lemma": "impello",
+    "expected_pos": "verb",
+    "category": "verbs",
+    "expected_tense": "perfect",
+    "expected_mood": "subjunctive"
+  },
+  {
+    "form": "sum",
+    "expected_lemma": "sum",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "es",
+    "expected_lemma": "sum",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "est",
+    "expected_lemma": "sum",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "sunt",
+    "expected_lemma": "sum",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "eram",
+    "expected_lemma": "sum",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "imperfect",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "ero",
+    "expected_lemma": "sum",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "future",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "esse",
+    "expected_lemma": "sum",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "infinitive"
+  },
+  {
+    "form": "fui",
+    "expected_lemma": "sum",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "perfect",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "eo",
+    "expected_lemma": "eo",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "is",
+    "expected_lemma": "eo",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "it",
+    "expected_lemma": "eo",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "eunt",
+    "expected_lemma": "eo",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "ibam",
+    "expected_lemma": "eo",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "imperfect",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "ibo",
+    "expected_lemma": "eo",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "future",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "ire",
+    "expected_lemma": "eo",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "infinitive"
+  },
+  {
+    "form": "ii",
+    "expected_lemma": "eo",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "perfect",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "fert",
+    "expected_lemma": "fero",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "tuli",
+    "expected_lemma": "fero",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "perfect",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "vult",
+    "expected_lemma": "volo",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "potest",
+    "expected_lemma": "possum",
+    "expected_pos": "verb",
+    "category": "irregular_verbs",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "arma",
+    "expected_lemma": "arma",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "virum",
+    "expected_lemma": "vir",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "Lavinia",
+    "expected_lemma": "Lavinius",
+    "expected_pos": "adjective",
+    "category": "aeneid",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "litora",
+    "expected_lemma": "litus",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "terris",
+    "expected_lemma": "terra",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "ablative"
+  },
+  {
+    "form": "alto",
+    "expected_lemma": "altus",
+    "expected_pos": "adjective",
+    "category": "aeneid",
+    "expected_case": "ablative"
+  },
+  {
+    "form": "vi",
+    "expected_lemma": "vis",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "ablative"
+  },
+  {
+    "form": "Iunonis",
+    "expected_lemma": "Iuno",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "bello",
+    "expected_lemma": "bellum",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "ablative"
+  },
+  {
+    "form": "urbem",
+    "expected_lemma": "urbs",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "deos",
+    "expected_lemma": "deus",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "Latio",
+    "expected_lemma": "Latium",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "ablative"
+  },
+  {
+    "form": "patres",
+    "expected_lemma": "pater",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "nominative"
+  },
+  {
+    "form": "moenia",
+    "expected_lemma": "moenia",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "Romae",
+    "expected_lemma": "Roma",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "mihi",
+    "expected_lemma": "ego",
+    "expected_pos": "pronoun",
+    "category": "aeneid",
+    "expected_case": "dative"
+  },
+  {
+    "form": "numine",
+    "expected_lemma": "numen",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "ablative"
+  },
+  {
+    "form": "deum",
+    "expected_lemma": "deus",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "genitive"
+  },
+  {
+    "form": "pietate",
+    "expected_lemma": "pietas",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "ablative"
+  },
+  {
+    "form": "virum",
+    "expected_lemma": "vir",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "labores",
+    "expected_lemma": "labor",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "accusative"
+  },
+  {
+    "form": "animis",
+    "expected_lemma": "animus",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "ablative"
+  },
+  {
+    "form": "irae",
+    "expected_lemma": "ira",
+    "expected_pos": "noun",
+    "category": "aeneid",
+    "expected_case": "nominative"
+  },
+  {
+    "form": "cano",
+    "expected_lemma": "cano",
+    "expected_pos": "verb",
+    "category": "aeneid",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "venit",
+    "expected_lemma": "venio",
+    "expected_pos": "verb",
+    "category": "aeneid",
+    "expected_tense": "present",
+    "expected_mood": "indicative"
+  },
+  {
+    "form": "iactatus",
+    "expected_lemma": "iacto",
+    "expected_pos": "verb",
+    "category": "aeneid",
+    "expected_tense": "perfect",
+    "expected_mood": "participle"
+  },
+  {
+    "form": "passus",
+    "expected_lemma": "patior",
+    "expected_pos": "verb",
+    "category": "aeneid",
+    "expected_tense": "perfect",
+    "expected_mood": "participle"
+  },
+  {
+    "form": "laeso",
+    "expected_lemma": "laedo",
+    "expected_pos": "verb",
+    "category": "aeneid",
+    "expected_tense": "perfect",
+    "expected_mood": "participle"
+  },
+  {
+    "form": "dolens",
+    "expected_lemma": "doleo",
+    "expected_pos": "verb",
+    "category": "aeneid",
+    "expected_tense": "present",
+    "expected_mood": "participle"
+  },
+  {
+    "form": "memora",
+    "expected_lemma": "memoro",
+    "expected_pos": "verb",
+    "category": "aeneid",
+    "expected_tense": "present",
+    "expected_mood": "imperative"
+  },
+  {
+    "form": "volvere",
+    "expected_lemma": "volvo",
+    "expected_pos": "verb",
+    "category": "aeneid",
+    "expected_tense": "present",
+    "expected_mood": "infinitive"
+  },
+  {
+    "form": "adire",
+    "expected_lemma": "adeo",
+    "expected_pos": "verb",
+    "category": "aeneid",
+    "expected_tense": "present",
+    "expected_mood": "infinitive"
+  },
+  {
+    "form": "antiqua",
+    "expected_lemma": "antiquus",
+    "expected_pos": "adjective",
+    "expected_case": "nominative",
+    "category": "aeneid"
+  },
+  {
+    "form": "tenuere",
+    "expected_lemma": "teneo",
+    "expected_pos": "verb",
+    "expected_tense": "perfect",
+    "expected_mood": "indicative",
+    "category": "aeneid"
+  },
+  {
+    "form": "coloni",
+    "expected_lemma": "colonus",
+    "expected_pos": "noun",
+    "expected_case": "nominative",
+    "category": "aeneid"
+  },
+  {
+    "form": "Karthago",
+    "expected_lemma": "Karthago",
+    "expected_pos": "noun",
+    "expected_case": "nominative",
+    "category": "aeneid"
+  },
+  {
+    "form": "ostia",
+    "expected_lemma": "ostium",
+    "expected_pos": "noun",
+    "expected_case": "accusative",
+    "category": "aeneid"
+  },
+  {
+    "form": "dives",
+    "expected_lemma": "dives",
+    "expected_pos": "adjective",
+    "expected_case": "nominative",
+    "category": "aeneid"
+  },
+  {
+    "form": "opum",
+    "expected_lemma": "ops",
+    "expected_pos": "noun",
+    "expected_case": "genitive",
+    "category": "aeneid"
+  },
+  {
+    "form": "asperrima",
+    "expected_lemma": "asperrimus",
+    "expected_pos": "adjective",
+    "expected_case": "nominative",
+    "category": "aeneid"
+  },
+  {
+    "form": "fertur",
+    "expected_lemma": "fero",
+    "expected_pos": "verb",
+    "expected_tense": "present",
+    "expected_mood": "indicative",
+    "category": "aeneid"
+  },
+  {
+    "form": "coluisse",
+    "expected_lemma": "colo",
+    "expected_pos": "verb",
+    "expected_tense": "perfect",
+    "expected_mood": "infinitive",
+    "category": "aeneid"
+  },
+  {
+    "form": "Samo",
+    "expected_lemma": "Samos",
+    "expected_pos": "noun",
+    "expected_case": "ablative",
+    "category": "aeneid"
+  },
+  {
+    "form": "currus",
+    "expected_lemma": "currus",
+    "expected_pos": "noun",
+    "expected_case": "nominative",
+    "category": "aeneid"
+  },
+  {
+    "form": "gentibus",
+    "expected_lemma": "gens",
+    "expected_pos": "noun",
+    "expected_case": "dative",
+    "category": "aeneid"
+  },
+  {
+    "form": "duci",
+    "expected_lemma": "duco",
+    "expected_pos": "verb",
+    "expected_tense": "present",
+    "expected_mood": "infinitive",
+    "category": "aeneid"
+  },
+  {
+    "form": "audierat",
+    "expected_lemma": "audio",
+    "expected_pos": "verb",
+    "expected_tense": "pluperfect",
+    "expected_mood": "indicative",
+    "category": "aeneid"
+  },
+  {
+    "form": "arces",
+    "expected_lemma": "arx",
+    "expected_pos": "noun",
+    "expected_case": "accusative",
+    "category": "aeneid"
+  },
+  {
+    "form": "venturum",
+    "expected_lemma": "venio",
+    "expected_pos": "verb",
+    "expected_tense": "future",
+    "expected_mood": "participle",
+    "category": "aeneid"
+  },
+  {
+    "form": "gesserat",
+    "expected_lemma": "gero",
+    "expected_pos": "verb",
+    "expected_tense": "pluperfect",
+    "expected_mood": "indicative",
+    "category": "aeneid"
+  },
+  {
+    "form": "exciderant",
+    "expected_lemma": "excido",
+    "expected_pos": "verb",
+    "expected_tense": "pluperfect",
+    "expected_mood": "indicative",
+    "category": "aeneid"
+  },
+  {
+    "form": "mente",
+    "expected_lemma": "mens",
+    "expected_pos": "noun",
+    "expected_case": "ablative",
+    "category": "aeneid"
+  },
+  {
+    "form": "repostum",
+    "expected_lemma": "repono",
+    "expected_pos": "verb",
+    "expected_tense": "perfect",
+    "expected_mood": "participle",
+    "category": "aeneid"
+  },
+  {
+    "form": "Troas",
+    "expected_lemma": "Tros",
+    "expected_pos": "noun",
+    "expected_case": "accusative",
+    "category": "aeneid"
+  },
+  {
+    "form": "Danaum",
+    "expected_lemma": "Danai",
+    "expected_pos": "noun",
+    "expected_case": "genitive",
+    "category": "aeneid"
+  },
+  {
+    "form": "immitis",
+    "expected_lemma": "immitis",
+    "expected_pos": "adjective",
+    "expected_case": "genitive",
+    "category": "aeneid"
+  },
+  {
+    "form": "Achilli",
+    "expected_lemma": "Achilles",
+    "expected_pos": "noun",
+    "expected_case": "genitive",
+    "category": "aeneid"
+  },
+  {
+    "form": "maria",
+    "expected_lemma": "mare",
+    "expected_pos": "noun",
+    "expected_case": "accusative",
+    "category": "aeneid"
+  },
+  {
+    "form": "omnia",
+    "expected_lemma": "omnis",
+    "expected_pos": "adjective",
+    "expected_case": "accusative",
+    "category": "aeneid"
+  },
+  {
+    "form": "molis",
+    "expected_lemma": "moles",
+    "expected_pos": "noun",
+    "expected_case": "genitive",
+    "category": "aeneid"
+  }
+]

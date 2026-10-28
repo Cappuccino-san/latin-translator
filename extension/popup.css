@@ -1,0 +1,174 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  width: 480px;
+  padding: 14px;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 1.3em;
+  margin: 0 0 12px 0;
+  color: #2c3e50;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.05em;
+  margin: 14px 0 6px 0;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 4px;
+}
+
+h3 {
+  font-size: 0.95em;
+  margin: 10px 0 4px 0;
+  color: #34495e;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 70px;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 13px;
+  resize: vertical;
+}
+
+button#translate-button {
+  padding: 8px 16px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  align-self: flex-start;
+}
+
+button#translate-button:hover {
+  background-color: #1f618d;
+}
+
+.error-box {
+  background-color: #fdf2e9;
+  border: 1px solid #f39c12;
+  border-radius: 4px;
+  padding: 10px;
+  color: #935116;
+  font-size: 12px;
+  margin: 8px 0;
+}
+
+.error-box pre {
+  background-color: #fcf3cf;
+  padding: 6px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.translation-summary {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.translation-summary p {
+  margin: 4px 0;
+}
+
+.analysis-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin: 6px 0 10px 0;
+}
+
+.analysis-table th,
+.analysis-table td {
+  border: 1px solid #e2e8f0;
+  padding: 5px 6px;
+  text-align: left;
+}
+
+.analysis-table th {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 600;
+}
+
+.analysis-table tr:hover {
+  background-color: #f8fafc;
+}
+
+.add-vocab-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 2px 7px;
+}
+
+.add-vocab-btn:hover {
+  background-color: #1e8449;
+}
+
+.syntax-box {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.syntax-box p {
+  margin: 4px 0;
+}
+
+.syntax-box ul {
+  margin: 4px 0 4px 16px;
+  padding: 0;
+}
+
+#history-list,
+#vocabulary-list {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0;
+  max-height: 120px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+#history-list li,
+#vocabulary-list li {
+  padding: 5px 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+#history-list li:last-child,
+#vocabulary-list li:last-child {
+  border-bottom: none;
+}
+
+#history-list li:hover {
+  background-color: #f1f5f9;
+}
