@@ -10,7 +10,7 @@ from pydantic import BaseModel, Field
 
 
 class AnalyzeRequest(BaseModel):
-    text: str = Field(..., min_length=1, description="Latin text to analyze")
+    text: str = Field(..., description="Latin text to analyze")
     top_n: int = Field(3, ge=1, le=10, description="Analyses kept per token")
 
 
@@ -80,11 +80,11 @@ class ParseResponse(BaseModel):
 
 
 class ParseRequest(BaseModel):
-    text: str = Field(..., min_length=1)
+    text: str = Field(..., description="Latin text to parse")
 
 
 class LemmatizeRequest(BaseModel):
-    word: str = Field(..., min_length=1)
+    word: str = Field(..., description="Latin word to lemmatize")
 
 
 class LemmatizeResponse(BaseModel):
@@ -98,6 +98,39 @@ class AeneidLine(BaseModel):
     line_end: int
     latin: str
     source: str = "Vergil, Aeneid 1 (Perseus / Greenough 1900, CC BY-SA 3.0 US)"
+
+
+class VirgilLine(BaseModel):
+    work: str
+    book: int
+    line: int
+    latin: str
+    source: str = "P. Vergilius Maro (Perseus / Greenough 1900, CC BY-SA 3.0 US)"
+
+
+class VirgilCatalogWork(BaseModel):
+    key: str
+    title: str
+    books: int
+    total_lines: int
+
+
+class VirgilTranslationLine(BaseModel):
+    line: int
+    text: str
+
+
+class VirgilTranslationResponse(BaseModel):
+    work: str
+    book: int
+    start: int
+    end: int
+    translator: str | None = None
+    year: int | None = None
+    source: str | None = None
+    text: str | None = None
+    lines: list[VirgilTranslationLine] = Field(default_factory=list)
+    available: bool = False
 
 
 class BenchmarkEntry(BaseModel):

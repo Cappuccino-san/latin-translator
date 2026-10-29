@@ -33,7 +33,7 @@ from .schemas import (
 )
 
 ACC_PREPS = {"ad", "in", "per", "ob", "circum", "contra", "inter", "sub", "trans", "super"}
-ABL_PREPS = {"ab", "a", "cum", "sine", "pro", "in", "de", "ex", "e"}
+ABL_PREPS = {"ab", "a", "cum", "sine", "pro", "in", "de", "ex", "e", "sub"}
 TIME_LEMMAS = {"annus", "dies", "tempus", "hora", "nox", "mensis", "aetas", "saeculum"}
 PLACE_LEMMAS = {"locus", "aequor", "terra", "mare", "campus", "mens", "orbis"}
 ABL_PREP_KIND = {
@@ -43,6 +43,7 @@ ABL_PREP_KIND = {
     "sine": "ablative of separation (privation)",
     "pro": "ablative of behalf / in front of",
     "in": "ablative of place where",
+    "sub": "ablative of place where / under",
     "de": "ablative of concerning / down from",
     "ex": "ablative of separation (out of)",
     "e": "ablative of separation (out of)",
@@ -69,6 +70,10 @@ def parse_tokens(text: str, tokens: list[TokenResult]) -> ParseResponse:
     verb: TokenAnalysis | None = None
     verb_idx = -1
     for i, t in enumerate(tokens):
+        if i > 0:
+            prev = _best(tokens[i - 1])
+            if prev and prev.pos == "preposition":
+                continue
         for a in t.analyses:
             if a.pos == "verb" and a.mood in ("indicative", "subjunctive", "imperative") and a.person:
                 verb = a
@@ -80,6 +85,8 @@ def parse_tokens(text: str, tokens: list[TokenResult]) -> ParseResponse:
     subject: list[str] = []
     subject_expl = ""
     used_indices: set[int] = set()
+    if verb_idx >= 0:
+        used_indices.add(verb_idx)
     # Vocative address (Musa, memora): a token followed by a comma before
     # an imperative is an address, never a subject, object, or ablative.
     if verb and verb.mood == "imperative":

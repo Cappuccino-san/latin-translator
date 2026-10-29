@@ -1,7 +1,8 @@
-"""Benchmark: precision / recall on inflected vocabulary.
+"""Benchmark: precision / recall on inflected vocabulary and Virgil coverage.
 
 Usage:  python eval/evaluate.py [--golden eval/golden.json]
         python eval/evaluate.py --aeneid
+        python eval/evaluate.py --virgil [--work aeneid|eclogues|georgics]
 
 For each golden form, the analyzer is correct if ANY analysis matches
 the expected lemma and the expected morphology field(s). This is
@@ -9,12 +10,9 @@ precision/recall over forms, not over tokens in running text:
   precision = correct / analyzed (forms the analyzer claimed)
   recall    = correct / total golden forms
   F1        = harmonic mean
-Unknown forms count against recall, not precision, and are listed
-separately so a coverage gap is not hidden inside a precision number.
 
-The --aeneid mode reports token coverage on Aeneid 1.1-11 separately,
-because poetry coverage and dictionary-form accuracy are different
-claims and should not be averaged together.
+The --aeneid mode reports token coverage on Aeneid 1.1-11 and 1.12-33 separately.
+The --virgil mode reports token coverage across all works of Virgil by book.
 """
 
 from __future__ import annotations
@@ -72,12 +70,93 @@ def evaluate(golden_path: Path) -> dict:
             "by_category": by_cat, "misses": misses}
 
 
+def evaluate_virgil(target_work: str | None = None) -> dict:
+    virgil_dir = ROOT / "data" / "virgil"
+    works = ["aeneid", "eclogues", "georgics"]
+    if target_work and target_work.lower() in works:
+        works = [target_work.lower()]
+
+    results: dict[str, dict] = {}
+    grand_total = grand_known = grand_unknown = 0
+
+    for work in works:
+        work_dir = virgil_dir / work
+        if not work_dir.exists():
+            continue
+        files = sorted(work_dir.glob("book*.txt"), key=lambda p: int("".join(filter(str.isdigit, p.stem))))
+        work_total = work_known = work_unknown = 0
+        book_stats = []
+
+        for f in files:
+            b_num = int("".join(filter(str.isdigit, f.stem)))
+            text = f.read_text(encoding="utf-8")
+            res = analyze_text(text)
+            tot = res.known_tokens + res.unknown_tokens
+            work_total += tot
+            work_known += res.known_tokens
+            work_unknown += res.unknown_tokens
+            book_stats.append({
+                "book": b_num,
+                "lines": len(text.splitlines()),
+                "total_tokens": tot,
+                "known_tokens": res.known_tokens,
+                "unknown_tokens": res.unknown_tokens,
+                "coverage": res.coverage
+            })
+
+        cov = work_known / work_total if work_total else 0.0
+        results[work] = {
+            "total_tokens": work_total,
+            "known_tokens": work_known,
+            "unknown_tokens": work_unknown,
+            "coverage": cov,
+            "books": book_stats
+        }
+        grand_total += work_total
+        grand_known += work_known
+        grand_unknown += work_unknown
+
+    results["corpus_total"] = {
+        "total_tokens": grand_total,
+        "known_tokens": grand_known,
+        "unknown_tokens": grand_unknown,
+        "coverage": grand_known / grand_total if grand_total else 0.0
+    }
+    return results
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--golden", default=str(ROOT / "eval" / "golden.json"))
     ap.add_argument("--aeneid", action="store_true")
+    ap.add_argument("--virgil", action="store_true")
+    ap.add_argument("--work", choices=["aeneid", "eclogues", "georgics"], default=None)
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
+
+    if args.virgil:
+        v_res = evaluate_virgil(args.work)
+        if args.json:
+            print(json.dumps(v_res, indent=2))
+            return 0
+        print("=================================================================")
+        print("VIRGIL CORPUS COVERAGE REPORT (Perseus / Greenough 1900 Edition)")
+        print("=================================================================")
+        for work, data in v_res.items():
+            if work == "corpus_total":
+                continue
+            print(f"\n--- {work.upper()} ---")
+            for b in data["books"]:
+                print(f"  Book {b['book']:>2} ({b['lines']:>3} lines): {b['known_tokens']:>4} / {b['total_tokens']:>4} known ({b['coverage']:>5.1%}), unknown: {b['unknown_tokens']:>4}")
+            print(f"Total {work.capitalize()}: {data['known_tokens']} / {data['total_tokens']} known ({data['coverage']:.1%}), unknown: {data['unknown_tokens']}")
+        total = v_res["corpus_total"]
+        print("\n-----------------------------------------------------------------")
+        print(f"GRAND TOTAL VIRGIL: {total['known_tokens']} / {total['total_tokens']} tokens known ({total['coverage']:.1%}), unknown: {total['unknown_tokens']}")
+        print("-----------------------------------------------------------------")
+        lex_count = len(get_analyzer().entries)
+        print(f"Note: The curated lexicon contains {lex_count:,} core entries (with Batches 1-44). Coverage reflects")
+        print("real Whitaker-style lexical coverage on unabridged hexameter poetry.")
+        return 0
 
     if args.aeneid:
         p1 = ROOT / "data" / "aeneid" / "book1_1_11.txt"

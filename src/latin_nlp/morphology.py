@@ -356,7 +356,7 @@ class MorphAnalyzer:
                                 meta.get("case"), meta.get("number"), meta.get("gender"),
                                 meta.get("person"), meta.get("tense"), meta.get("mood"), meta.get("voice")),
                           irregular=True)
-            if e.pos in ("preposition", "conjunction", "adverb"):
+            if e.pos in ("preposition", "conjunction", "adverb", "interjection"):
                 self._add(_Form(e.lemma.lower(), e.lemma, e.pos, e.gloss))
                 continue
             if e.pos == "adjective" and e.declension is None:

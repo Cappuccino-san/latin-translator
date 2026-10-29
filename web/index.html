@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latin NLP — Translator &amp; Virgil Corpus Explorer</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #131c2e;
+      --card-border: #23334d;
+      --card-inner: #0b1220;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --primary: #38bdf8;
+      --primary-hover: #0ea5e9;
+      --accent: #c084fc;
+      --accent-bg: rgba(192, 132, 252, 0.12);
+      --success: #34d399;
+      --warning: #fbbf24;
+      --danger: #f87171;
+      --table-header: #1e293b;
+      --table-row-alt: #0e1726;
+      --badge-bg: #1e293b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+    }
+
+    header h1 span {
+      color: var(--primary);
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 0.5rem;
+    }
+
+    /* Virgil Browser Controls */
+    .virgil-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: flex-end;
+      margin-bottom: 1rem;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .control-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    select, input[type="number"] {
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 0.4rem;
+      color: var(--text);
+      padding: 0.5rem 0.75rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+
+    select:focus, input[type="number"]:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+    }
+
+    .range-inputs {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .range-inputs input {
+      width: 70px;
+    }
+
+    /* Browse Pane */
+    .browse-pane {
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 0.5rem;
+      max-height: 240px;
+      overflow-y: auto;
+      padding: 0.5rem 0;
+    }
+
+    .line-item {
+      display: flex;
+      align-items: baseline;
+      padding: 0.45rem 1rem;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 0.95rem;
+    }
+
+    .line-item:last-child {
+      border-bottom: none;
+    }
+
+    .line-item:hover {
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    .line-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      width: 45px;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    .line-text {
+      color: var(--text);
+      font-family: Georgia, serif;
+      font-size: 1.02rem;
+      flex-grow: 1;
+    }
+
+    .line-badge-load {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.25rem;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+      opacity: 0;
+      transition: opacity 0.15s ease;
+      margin-left: 0.5rem;
+    }
+
+    .line-item:hover .line-badge-load {
+      opacity: 1;
+    }
+
+    /* Examples */
+    .examples-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .examples-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 0.25rem;
+    }
+
+    .btn-example {
+      background: var(--badge-bg);
+      color: var(--text);
+      border: 1px solid var(--card-border);
+      border-radius: 9999px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-style: italic;
+    }
+
+    .btn-example:hover {
+      background: var(--primary);
+      color: #090d16;
+      border-color: var(--primary);
+    }
+
+    textarea {
+      width: 100%;
+      height: 90px;
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 0.5rem;
+      color: var(--text);
+      font-size: 1.15rem;
+      font-family: Georgia, serif;
+      padding: 0.85rem;
+      resize: vertical;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.3rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 0.45rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #090d16;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background: #23334d;
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: #334155;
+    }
+
+    /* Word-by-Word Reading Aid */
+    .reading-aid-card {
+      background: rgba(14, 23, 38, 0.95);
+      border: 1px solid var(--card-border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .reading-aid-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 0.65rem;
+    }
+
+    .gloss-sequence {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+
+    .gloss-token-box {
+      display: inline-flex;
+      flex-direction: column;
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 0.4rem;
+      padding: 0.4rem 0.6rem;
+      text-align: center;
+      min-width: 60px;
+    }
+
+    .gloss-token-word {
+      font-family: Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.2rem;
+    }
+
+    .gloss-token-text {
+      font-size: 0.8rem;
+      color: var(--primary);
+      font-style: italic;
+    }
+
+    .gloss-token-unknown {
+      font-size: 0.75rem;
+      color: var(--danger);
+      font-style: italic;
+    }
+
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 0.65rem 0.85rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    th {
+      background: var(--table-header);
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-row-alt);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.45rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: 0.25rem;
+      background: var(--badge-bg);
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .badge-pos {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+    }
+
+    .badge-enclitic {
+      background: var(--accent-bg);
+      color: var(--accent);
+      margin-left: 0.35rem;
+    }
+
+    .case-explained {
+      font-size: 0.85rem;
+      color: #38bdf8;
+      font-weight: 500;
+    }
+
+    .case-explained.neutral {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* Parse Grid */
+    .parse-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .parse-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .parse-item {
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+
+    .parse-item.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .parse-item-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+
+    .parse-item-content {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.3rem;
+    }
+
+    .parse-item-explanation {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .list-pill {
+      display: inline-flex;
+      align-items: center;
+      background: #1e293b;
+      border: 1px solid var(--card-border);
+      border-radius: 0.35rem;
+      padding: 0.2rem 0.55rem;
+      margin: 0.2rem 0.35rem 0.2rem 0;
+      font-size: 0.88rem;
+    }
+
+    .list-pill .pill-kind {
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-left: 0.4rem;
+    }
+
+    .coverage-badge {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      background: rgba(52, 211, 153, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+
+    /* English Translation Section */
+    .translation-body {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #f1f5f9;
+      font-family: Georgia, serif;
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      white-space: pre-line;
+    }
+
+    .translation-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .alert-warning-box {
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      color: var(--warning);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .empty-note {
+      color: var(--text-muted);
+      font-style: italic;
+      font-size: 0.88rem;
+    }
+
+    .status-msg {
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.25rem;
+      display: none;
+    }
+
+    .status-msg.error {
+      display: block;
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--danger);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Latin NLP <span>Translator</span></h1>
+      <p>Rule-based Latin NLP engine: Whitaker-style morphological analysis, syntactic constituent parsing, and complete unabridged Virgil corpus browser</p>
+    </header>
+
+    <!-- Virgil Corpus Browser (Sentence Picker) -->
+    <div class="card">
+      <div class="section-title">
+        <span>Explore Virgil Corpus (Aeneid &bull; Eclogues &bull; Georgics)</span>
+        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: normal;">Perseus / Greenough 1900 Edition</span>
+      </div>
+
+      <div class="virgil-controls">
+        <div class="control-group">
+          <label class="control-label" for="corpus-work">Work</label>
+          <select id="corpus-work">
+            <option value="aeneid">Aeneid (Books I–XII)</option>
+            <option value="eclogues">Eclogues / Bucolica (I–X)</option>
+            <option value="georgics">Georgics (Books I–IV)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="corpus-book">Book / Poem</label>
+          <select id="corpus-book">
+            <!-- Populated dynamically -->
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">Line Range</label>
+          <div class="range-inputs">
+            <input type="number" id="corpus-start" value="1" min="1" max="999">
+            <span style="color: var(--text-muted);">&ndash;</span>
+            <input type="number" id="corpus-end" value="15" min="1" max="999">
+          </div>
+        </div>
+
+        <button type="button" id="btn-fetch-lines" class="btn btn-secondary">Browse Lines</button>
+        <button type="button" id="btn-load-range" class="btn btn-secondary" title="Load whole line range to input box">Load Range to Input</button>
+        <a id="btn-open-read" class="btn btn-secondary" target="_blank" href="/virgil/read?work=aeneid&amp;book=1" title="Open full passage in new reading tab">Open full passage in new tab &#x2197;</a>
+      </div>
+
+      <!-- Browse Pane -->
+      <div id="browse-pane" class="browse-pane">
+        <div style="padding: 1rem; text-align: center; color: var(--text-muted);">Loading Virgil corpus lines...</div>
+      </div>
+    </div>
+
+    <!-- Main Input Card -->
+    <div class="card">
+      <div class="examples-container">
+        <span class="examples-label">Examples:</span>
+        <button type="button" class="btn-example" data-text="Puella servum videt">Puella servum videt</button>
+        <button type="button" class="btn-example" data-text="Arma virumque cano, Troiae qui primus ab oris" data-work="aeneid" data-book="1" data-start="1" data-end="1">Arma virumque cano (Aeneid 1.1)</button>
+        <button type="button" class="btn-example" data-text="Tityre, tu patulae recubans sub tegmine fagi" data-work="eclogues" data-book="1" data-start="1" data-end="1">Tityre, tu patulae (Eclogues 1.1)</button>
+        <button type="button" class="btn-example" data-text="Quid faciat laetas segetes, quo sidere terram" data-work="georgics" data-book="1" data-start="1" data-end="1">Quid faciat laetas (Georgics 1.1)</button>
+        <button type="button" class="btn-example" data-text="Musa, mihi causas memora, quo numine laeso" data-work="aeneid" data-book="1" data-start="8" data-end="8">Musa, mihi causas memora (Aeneid 1.8)</button>
+      </div>
+
+      <textarea id="latin-input" placeholder="Type Latin text or click any Virgil verse above to load...">Puella servum videt</textarea>
+
+      <div class="actions">
+        <button type="button" id="btn-both" class="btn btn-primary">Analyze &amp; Parse</button>
+        <button type="button" id="btn-analyze" class="btn btn-secondary">Analyze Only</button>
+        <button type="button" id="btn-parse" class="btn btn-secondary">Parse Only</button>
+      </div>
+    </div>
+
+    <div id="status-box" class="status-msg"></div>
+
+    <!-- Word-by-Word Reading Aid (Gloss Sequence) -->
+    <div id="reading-aid-card" class="reading-aid-card" style="display: none;">
+      <div class="reading-aid-label">Word-by-Word Reading Aid (Literal gloss sequence in word order &bull; NOT a fluent English translation)</div>
+      <div id="gloss-sequence" class="gloss-sequence"></div>
+    </div>
+
+    <!-- Syntax & Clause Analysis (Parse Box) -->
+    <div id="parse-card" class="card">
+      <div class="section-title">
+        <span>Syntax &amp; Clause Analysis</span>
+      </div>
+      <div class="parse-grid">
+        <div class="parse-item">
+          <div class="parse-item-title">Main Verb</div>
+          <div id="parse-verb" class="parse-item-content">—</div>
+          <div id="parse-verb-expl" class="parse-item-explanation">Finite verb governing the main clause</div>
+        </div>
+
+        <div class="parse-item">
+          <div class="parse-item-title">Subject</div>
+          <div id="parse-subject" class="parse-item-content">—</div>
+          <div id="parse-subject-expl" class="parse-item-explanation">—</div>
+        </div>
+
+        <div class="parse-item">
+          <div class="parse-item-title">Direct Object</div>
+          <div id="parse-object" class="parse-item-content">—</div>
+          <div id="parse-object-expl" class="parse-item-explanation">—</div>
+        </div>
+
+        <div class="parse-item">
+          <div class="parse-item-title">Prepositional Phrases</div>
+          <div id="parse-prep" class="parse-item-content">—</div>
+          <div id="parse-prep-expl" class="parse-item-explanation">—</div>
+        </div>
+
+        <div class="parse-item full-width">
+          <div class="parse-item-title">Ablative Constructions</div>
+          <div id="parse-ablatives" class="parse-item-content">—</div>
+        </div>
+
+        <div class="parse-item full-width">
+          <div class="parse-item-title">Indirect Statements (Accusative-plus-Infinitive)</div>
+          <div id="parse-indirect" class="parse-item-content">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Word-by-Word Table with Case Explained -->
+    <div id="analyze-card" class="card">
+      <div class="section-title">
+        <span>Morphology &amp; Case Explanations</span>
+        <span id="coverage-badge" class="coverage-badge">Coverage: —</span>
+      </div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Word</th>
+              <th>Lemma</th>
+              <th>Part of Speech</th>
+              <th>Morphology</th>
+              <th>Case Explained</th>
+              <th>Gloss</th>
+              <th>Confidence</th>
+            </tr>
+          </thead>
+          <tbody id="tokens-tbody">
+            <tr>
+              <td colspan="7" class="empty-note" style="text-align: center;">Click "Analyze &amp; Parse" or select any Virgil line above.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- English Translation Section -->
+    <div id="translation-card" class="card">
+      <div class="section-title">
+        <span>English Translation (Public Domain)</span>
+        <span id="translation-badge" class="badge">Public Domain</span>
+      </div>
+      <div id="translation-content">
+        <div class="translation-meta" id="translation-meta" style="display: none;"></div>
+        <div id="translation-body" class="translation-body">
+          <span class="empty-note">Click "Analyze &amp; Parse" or select any Virgil line above.</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Latin NLP Engine &bull; <a href="/docs" target="_blank">OpenAPI Docs (/docs)</a> &bull; <a href="/virgil?work=aeneid&amp;book=1&amp;start=1&amp;end=11" target="_blank">Virgil API (/virgil)</a> &bull; <a href="/health" target="_blank">Health Check (/health)</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const inputEl = document.getElementById('latin-input');
+    const statusBox = document.getElementById('status-box');
+    const tokensTbody = document.getElementById('tokens-tbody');
+    const coverageBadge = document.getElementById('coverage-badge');
+    const readingAidCard = document.getElementById('reading-aid-card');
+    const glossSequence = document.getElementById('gloss-sequence');
+
+    // Corpus Controls
+    const corpusWork = document.getElementById('corpus-work');
+    const corpusBook = document.getElementById('corpus-book');
+    const corpusStart = document.getElementById('corpus-start');
+    const corpusEnd = document.getElementById('corpus-end');
+    const browsePane = document.getElementById('browse-pane');
+    const btnFetchLines = document.getElementById('btn-fetch-lines');
+    const btnLoadRange = document.getElementById('btn-load-range');
+    const btnOpenRead = document.getElementById('btn-open-read');
+
+    // Translation Elements
+    const translationBadge = document.getElementById('translation-badge');
+    const translationMeta = document.getElementById('translation-meta');
+    const translationBody = document.getElementById('translation-body');
+
+    let currentCorpusRange = null;
+
+    // Parse elements
+    const parseVerb = document.getElementById('parse-verb');
+    const parseVerbExpl = document.getElementById('parse-verb-expl');
+    const parseSubject = document.getElementById('parse-subject');
+    const parseSubjectExpl = document.getElementById('parse-subject-expl');
+    const parseObject = document.getElementById('parse-object');
+    const parseObjectExpl = document.getElementById('parse-object-expl');
+    const parsePrep = document.getElementById('parse-prep');
+    const parsePrepExpl = document.getElementById('parse-prep-expl');
+    const parseAblatives = document.getElementById('parse-ablatives');
+    const parseIndirect = document.getElementById('parse-indirect');
+
+    const WORK_BOOKS = {
+      aeneid: { count: 12, label: 'Book' },
+      eclogues: { count: 10, label: 'Eclogue' },
+      georgics: { count: 4, label: 'Book' }
+    };
+
+    let currentFetchedLines = [];
+
+    function updateReadLink() {
+      if (!btnOpenRead) return;
+      const w = corpusWork.value;
+      const b = corpusBook.value;
+      btnOpenRead.href = `/virgil/read?work=${encodeURIComponent(w)}&book=${encodeURIComponent(b)}`;
+    }
+
+    function updateBookOptions() {
+      const work = corpusWork.value;
+      const config = WORK_BOOKS[work] || { count: 12, label: 'Book' };
+      corpusBook.innerHTML = '';
+      for (let i = 1; i <= config.count; i++) {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.textContent = `${config.label} ${i}`;
+        corpusBook.appendChild(opt);
+      }
+      corpusStart.value = 1;
+      corpusEnd.value = 15;
+      updateReadLink();
+    }
+
+    async function fetchCorpusLines() {
+      const work = corpusWork.value;
+      const book = corpusBook.value;
+      const start = parseInt(corpusStart.value, 10) || 1;
+      const end = parseInt(corpusEnd.value, 10) || 15;
+
+      browsePane.innerHTML = '<div style="padding: 1rem; text-align: center; color: var(--text-muted);">Loading lines...</div>';
+      try {
+        const resp = await fetch(`/virgil?work=${encodeURIComponent(work)}&book=${encodeURIComponent(book)}&start=${start}&end=${end}`);
+        if (!resp.ok) {
+          const errData = await resp.json().catch(() => null);
+          const detail = (errData && errData.detail) ? errData.detail : `HTTP error ${resp.status}`;
+          throw new Error(detail);
+        }
+        const lines = await resp.json();
+        currentFetchedLines = lines;
+        renderBrowseLines(lines);
+      } catch (err) {
+        browsePane.innerHTML = `<div style="padding: 1rem; color: var(--danger);">Failed to load Virgil lines: ${escapeHtml(err.message)}</div>`;
+      }
+    }
+
+    function renderBrowseLines(lines) {
+      if (!lines || lines.length === 0) {
+        browsePane.innerHTML = '<div style="padding: 1rem; text-align: center; color: var(--text-muted);">No lines found in this range.</div>';
+        return;
+      }
+      browsePane.innerHTML = '';
+      lines.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'line-item';
+        row.innerHTML = `
+          <span class="line-num">${item.line}</span>
+          <span class="line-text">${escapeHtml(item.latin)}</span>
+          <span class="line-badge-load">Click to analyze</span>
+        `;
+        row.addEventListener('click', () => {
+          inputEl.value = item.latin;
+          currentCorpusRange = {
+            work: corpusWork.value,
+            book: parseInt(corpusBook.value, 10),
+            start: item.line,
+            end: item.line
+          };
+          handleRunAll();
+          window.scrollTo({ top: inputEl.offsetTop - 40, behavior: 'smooth' });
+        });
+        browsePane.appendChild(row);
+      });
+    }
+
+    function showError(msg) {
+      statusBox.className = 'status-msg error';
+      statusBox.textContent = msg;
+    }
+
+    function clearError() {
+      statusBox.className = 'status-msg';
+      statusBox.textContent = '';
+    }
+
+    function formatMorphology(a) {
+      if (!a) return '—';
+      const parts = [];
+      if (a.case) parts.push(a.case);
+      if (a.number) parts.push(a.number);
+      if (a.gender) parts.push(a.gender);
+      if (a.person) parts.push(`${a.person}p`);
+      if (a.tense) parts.push(a.tense);
+      if (a.mood) parts.push(a.mood);
+      if (a.voice) parts.push(a.voice);
+      return parts.join(', ') || '—';
+    }
+
+    function explainCase(token, a, parseData) {
+      if (!a || a.unknown) return '<span class="case-explained neutral">—</span>';
+      const pos = (a.pos || '').toLowerCase();
+      const c = (a.case || '').toLowerCase();
+
+      if (!['noun', 'adjective', 'pronoun'].includes(pos) && !c) {
+        if (pos === 'verb') return '<span class="case-explained neutral">predicate verb</span>';
+        if (pos === 'preposition') return '<span class="case-explained neutral">preposition governing case</span>';
+        if (pos === 'conjunction') return '<span class="case-explained neutral">coordinator / connective</span>';
+        if (pos === 'adverb') return '<span class="case-explained neutral">adverbial modifier</span>';
+        return '<span class="case-explained neutral">—</span>';
+      }
+
+      const cleanWord = (token.original || '').toLowerCase().replace(/[^a-z]/g, '');
+
+      if (c === 'nominative') {
+        if (parseData && parseData.subject && parseData.subject.some(s => s.toLowerCase().includes(cleanWord))) {
+          return '<span class="case-explained">nominative = subject of the verb (agrees in number)</span>';
+        }
+        return '<span class="case-explained">nominative = subject or agreeing predicate/adjective</span>';
+      }
+
+      if (c === 'accusative') {
+        if (parseData && parseData.prepositional_phrases) {
+          for (const pp of parseData.prepositional_phrases) {
+            if (pp.tokens.some(t => t.toLowerCase().includes(cleanWord))) {
+              if (pp.kind && pp.kind.includes('duration under per')) {
+                return '<span class="case-explained">accusative = duration of time under per ("through/for")</span>';
+              }
+              return `<span class="case-explained">accusative = object of preposition (${escapeHtml(pp.preposition)} + acc.)</span>`;
+            }
+          }
+        }
+        if (parseData && parseData.indirect_statements) {
+          for (const ind of parseData.indirect_statements) {
+            if (ind.subject_accusative.toLowerCase().includes(cleanWord)) {
+              return '<span class="case-explained">accusative = subject of indirect statement (AcI)</span>';
+            }
+          }
+        }
+        if (parseData && parseData.direct_object && parseData.direct_object.some(o => o.toLowerCase().includes(cleanWord))) {
+          return '<span class="case-explained">accusative = direct object of the verb</span>';
+        }
+        return '<span class="case-explained">accusative = direct object or accusative phrase</span>';
+      }
+
+      if (c === 'ablative') {
+        if (parseData && parseData.ablatives) {
+          for (const ab of parseData.ablatives) {
+            if (ab.tokens.some(t => t.toLowerCase().includes(cleanWord))) {
+              if (ab.kind === 'ablative absolute') {
+                return '<span class="case-explained">ablative = ablative absolute (detached clause)</span>';
+              }
+              if (ab.kind.includes('place')) {
+                return '<span class="case-explained">ablative = ablative of place where</span>';
+              }
+              if (ab.kind.includes('time')) {
+                return '<span class="case-explained">ablative = ablative of time (when / within which)</span>';
+              }
+              if (ab.kind.includes('separation')) {
+                return '<span class="case-explained">ablative = ablative of separation / agent</span>';
+              }
+              return `<span class="case-explained">ablative = ${escapeHtml(ab.kind)}</span>`;
+            }
+          }
+        }
+        return '<span class="case-explained">ablative = means/instrument, separation, place, time, or absolute</span>';
+      }
+
+      if (c === 'vocative') {
+        return '<span class="case-explained">vocative = direct address, never subject/object</span>';
+      }
+
+      if (c === 'genitive') {
+        return '<span class="case-explained">genitive = possession / of-phrase (modifies noun)</span>';
+      }
+
+      if (c === 'dative') {
+        return '<span class="case-explained">dative = indirect object (to/for reference)</span>';
+      }
+
+      return '<span class="case-explained neutral">—</span>';
+    }
+
+    async function analyzeText(text) {
+      clearError();
+      let resp;
+      try {
+        resp = await fetch('/analyze', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text, top_n: 3 })
+        });
+      } catch (networkErr) {
+        throw new Error(`Cannot reach Latin NLP server. Ensure FastAPI is running on http://127.0.0.1:8000 (${networkErr.message})`);
+      }
+      if (!resp.ok) {
+        const errData = await resp.json().catch(() => null);
+        const detail = (errData && errData.detail) ? errData.detail : `Analysis HTTP error ${resp.status}`;
+        throw new Error(detail);
+      }
+      return await resp.json();
+    }
+
+    async function parseText(text) {
+      clearError();
+      let resp;
+      try {
+        resp = await fetch('/parse', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text })
+        });
+      } catch (networkErr) {
+        throw new Error(`Cannot reach Latin NLP server. Ensure FastAPI is running on http://127.0.0.1:8000 (${networkErr.message})`);
+      }
+      if (!resp.ok) {
+        const errData = await resp.json().catch(() => null);
+        const detail = (errData && errData.detail) ? errData.detail : `Parsing HTTP error ${resp.status}`;
+        throw new Error(detail);
+      }
+      return await resp.json();
+    }
+
+    function renderGlossSequence(tokens) {
+      if (!tokens || tokens.length === 0) {
+        readingAidCard.style.display = 'none';
+        return;
+      }
+      readingAidCard.style.display = 'block';
+      glossSequence.innerHTML = '';
+      tokens.forEach(t => {
+        const a = (t.analyses && t.analyses.length > 0) ? t.analyses[0] : null;
+        const isUnknown = !a || a.unknown;
+        const word = escapeHtml(t.original);
+        const gloss = isUnknown ? '[unknown]' : escapeHtml(a.gloss || '—');
+        const glossClass = isUnknown ? 'gloss-token-unknown' : 'gloss-token-text';
+
+        const box = document.createElement('div');
+        box.className = 'gloss-token-box';
+        box.innerHTML = `
+          <span class="gloss-token-word">${word}</span>
+          <span class="${glossClass}">${gloss}</span>
+        `;
+        glossSequence.appendChild(box);
+      });
+    }
+
+    function renderAnalyzeTable(analyzeData, parseData) {
+      coverageBadge.textContent = `Coverage: ${analyzeData.known_tokens}/${analyzeData.known_tokens + analyzeData.unknown_tokens} (${Math.round(analyzeData.coverage * 100)}%)`;
+      tokensTbody.innerHTML = '';
+
+      if (!analyzeData.tokens || analyzeData.tokens.length === 0) {
+        tokensTbody.innerHTML = '<tr><td colspan="7" class="empty-note" style="text-align: center;">No tokens found.</td></tr>';
+        return;
+      }
+
+      analyzeData.tokens.forEach(t => {
+        const tr = document.createElement('tr');
+        const a = (t.analyses && t.analyses.length > 0) ? t.analyses[0] : null;
+
+        const isUnknown = !a || a.unknown;
+        const lemma = isUnknown ? '?' : a.lemma;
+        const pos = isUnknown ? 'unknown' : a.pos;
+        const gloss = isUnknown ? 'unknown' : (a.gloss || '—');
+        const morph = isUnknown ? '—' : formatMorphology(a);
+        const conf = isUnknown ? '0.00' : (a.confidence ? a.confidence.toFixed(2) : '1.00');
+        const caseExplanation = explainCase(t, a, parseData);
+
+        let wordHtml = `<strong>${escapeHtml(t.original)}</strong>`;
+        if (a && a.enclitic) {
+          wordHtml += `<span class="badge badge-enclitic">+${escapeHtml(a.enclitic)}</span>`;
+        }
+
+        tr.innerHTML = `
+          <td>${wordHtml}</td>
+          <td><em>${escapeHtml(lemma)}</em></td>
+          <td><span class="badge badge-pos">${escapeHtml(pos)}</span></td>
+          <td>${escapeHtml(morph)}</td>
+          <td>${caseExplanation}</td>
+          <td>${escapeHtml(gloss)}</td>
+          <td>${conf}</td>
+        `;
+        tokensTbody.appendChild(tr);
+      });
+    }
+
+    function renderParse(data) {
+      // Verb
+      if (data.verb) {
+        const vMorph = formatMorphology(data.verb);
+        parseVerb.innerHTML = `<strong>${escapeHtml(data.verb.form)}</strong> (${escapeHtml(data.verb.lemma)}) <span class="badge badge-pos">${escapeHtml(vMorph)}</span>`;
+        parseVerbExpl.textContent = `Gloss: "${data.verb.gloss || ''}"`;
+      } else {
+        parseVerb.innerHTML = '<span class="empty-note">None detected</span>';
+        parseVerbExpl.textContent = 'No finite verb found';
+      }
+
+      // Subject
+      if (data.subject && data.subject.length > 0) {
+        parseSubject.innerHTML = data.subject.map(s => `<span class="list-pill">${escapeHtml(s)}</span>`).join(' ');
+        parseSubjectExpl.textContent = data.subject_explanation || '';
+      } else {
+        parseSubject.innerHTML = '<span class="empty-note">None detected</span>';
+        parseSubjectExpl.textContent = data.subject_explanation || 'No nominative subject identified';
+      }
+
+      // Direct Object
+      if (data.direct_object && data.direct_object.length > 0) {
+        parseObject.innerHTML = data.direct_object.map(o => `<span class="list-pill">${escapeHtml(o)}</span>`).join(' ');
+        parseObjectExpl.textContent = data.object_explanation || '';
+      } else {
+        parseObject.innerHTML = '<span class="empty-note">None</span>';
+        parseObjectExpl.textContent = data.object_explanation || 'No ungoverned accusative found';
+      }
+
+      // Prepositional Phrases
+      if (data.prepositional_phrases && data.prepositional_phrases.length > 0) {
+        parsePrep.innerHTML = data.prepositional_phrases.map(p => {
+          return `<span class="list-pill"><strong>${escapeHtml(p.tokens.join(' '))}</strong><span class="pill-kind">${escapeHtml(p.kind)}</span></span>`;
+        }).join(' ');
+        parsePrepExpl.textContent = data.prepositional_phrases.map(p => p.explanation).join('; ');
+      } else {
+        parsePrep.innerHTML = '<span class="empty-note">None</span>';
+        parsePrepExpl.textContent = 'No prepositional phrases identified';
+      }
+
+      // Ablatives
+      if (data.ablatives && data.ablatives.length > 0) {
+        parseAblatives.innerHTML = data.ablatives.map(ab => {
+          return `<div style="margin-bottom: 0.4rem;"><span class="list-pill"><strong>${escapeHtml(ab.tokens.join(' '))}</strong><span class="pill-kind">${escapeHtml(ab.kind)}</span></span> <span class="parse-item-explanation">${escapeHtml(ab.explanation)}</span></div>`;
+        }).join('');
+      } else {
+        parseAblatives.innerHTML = '<span class="empty-note">None detected</span>';
+      }
+
+      // Indirect Statements
+      if (data.indirect_statements && data.indirect_statements.length > 0) {
+        parseIndirect.innerHTML = data.indirect_statements.map(ind => {
+          return `<div style="margin-bottom: 0.4rem;"><span class="list-pill">Subject: <strong>${escapeHtml(ind.subject_accusative)}</strong> &bull; Inf: <strong>${escapeHtml(ind.infinitive)}</strong></span> <span class="parse-item-explanation">${escapeHtml(ind.explanation)}</span></div>`;
+        }).join('');
+      } else {
+        parseIndirect.innerHTML = '<span class="empty-note">None detected</span>';
+      }
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    async function fetchTranslation(work, book, start, end) {
+      try {
+        const resp = await fetch(`/virgil/translation?work=${encodeURIComponent(work)}&book=${encodeURIComponent(book)}&start=${start}&end=${end}`);
+        if (!resp.ok) return null;
+        return await resp.json();
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function renderTranslation(transData, anData) {
+      if (transData && transData.available && transData.text) {
+        translationBadge.textContent = `${transData.translator} (${transData.year})`;
+        translationBadge.className = 'badge badge-pos';
+        translationMeta.style.display = 'block';
+        const workName = transData.work.charAt(0).toUpperCase() + transData.work.slice(1);
+        const rangeStr = transData.start === transData.end ? `line ${transData.start}` : `lines ${transData.start}–${transData.end}`;
+        translationMeta.innerHTML = `<strong>Translated by ${escapeHtml(transData.translator)} (${transData.year})</strong> &bull; ${escapeHtml(transData.source)} &bull; <em>${escapeHtml(workName)}</em> ${transData.book}, ${rangeStr}`;
+        translationBody.textContent = transData.text;
+      } else {
+        translationBadge.textContent = 'Literal Gloss (No Fluent Translation)';
+        translationBadge.className = 'badge';
+        translationMeta.style.display = 'none';
+
+        let glossHtml = '';
+        if (anData && anData.tokens && anData.tokens.length > 0) {
+          const parts = anData.tokens.map(t => {
+            const a = (t.analyses && t.analyses.length > 0) ? t.analyses[0] : null;
+            const g = (a && !a.unknown && a.gloss) ? a.gloss : '[unknown]';
+            return `<span style="display: inline-block; margin: 0.15rem 0.35rem 0.15rem 0; padding: 0.2rem 0.5rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 0.3rem;"><strong style="color: #fff;">${escapeHtml(t.original)}</strong>: <span style="color: var(--primary); font-style: italic;">${escapeHtml(g)}</span></span>`;
+          });
+          glossHtml = parts.join(' ');
+        } else {
+          glossHtml = '<span class="empty-note">No tokens to gloss.</span>';
+        }
+
+        translationBody.innerHTML = `
+          <div class="alert-warning-box">
+            <strong>Literal gloss &mdash; no fluent translation available for this passage</strong>
+            <div style="font-size: 0.84rem; color: var(--text-muted); margin-top: 0.3rem;">
+              No verified public-domain English translation is aligned for this custom passage. The rule-based dictionary glosses are displayed in word order; no translation has been invented or hallucinated.
+            </div>
+          </div>
+          <div style="margin-top: 0.75rem;">
+            ${glossHtml}
+          </div>
+        `;
+      }
+    }
+
+    async function handleRunAll() {
+      const text = inputEl.value.trim();
+      if (!text) {
+        showError("Please enter Latin text to analyze and parse.");
+        return;
+      }
+      clearError();
+      try {
+        let transPromise = Promise.resolve(null);
+        if (currentCorpusRange) {
+          transPromise = fetchTranslation(
+            currentCorpusRange.work,
+            currentCorpusRange.book,
+            currentCorpusRange.start,
+            currentCorpusRange.end
+          );
+        }
+        const [anData, parseData, transData] = await Promise.all([
+          analyzeText(text),
+          parseText(text),
+          transPromise
+        ]);
+        renderGlossSequence(anData.tokens);
+        renderParse(parseData);
+        renderAnalyzeTable(anData, parseData);
+        renderTranslation(transData, anData);
+      } catch (err) {
+        showError(`Request failed: ${err.message}`);
+      }
+    }
+
+    // Event listeners
+    inputEl.addEventListener('input', () => {
+      currentCorpusRange = null;
+    });
+
+    document.getElementById('btn-both').addEventListener('click', handleRunAll);
+    document.getElementById('btn-analyze').addEventListener('click', async () => {
+      const text = inputEl.value.trim();
+      if (!text) {
+        showError("Please enter Latin text to analyze.");
+        return;
+      }
+      try {
+        let transPromise = Promise.resolve(null);
+        if (currentCorpusRange) {
+          transPromise = fetchTranslation(
+            currentCorpusRange.work,
+            currentCorpusRange.book,
+            currentCorpusRange.start,
+            currentCorpusRange.end
+          );
+        }
+        const [anData, transData] = await Promise.all([analyzeText(text), transPromise]);
+        renderGlossSequence(anData.tokens);
+        renderAnalyzeTable(anData, null);
+        renderTranslation(transData, anData);
+      } catch (err) {
+        showError(err.message);
+      }
+    });
+    document.getElementById('btn-parse').addEventListener('click', async () => {
+      const text = inputEl.value.trim();
+      if (!text) {
+        showError("Please enter Latin text to parse.");
+        return;
+      }
+      try {
+        const parseData = await parseText(text);
+        renderParse(parseData);
+      } catch (err) {
+        showError(err.message);
+      }
+    });
+
+    document.querySelectorAll('.btn-example').forEach(btn => {
+      btn.addEventListener('click', () => {
+        inputEl.value = btn.dataset.text;
+        if (btn.dataset.work) {
+          currentCorpusRange = {
+            work: btn.dataset.work,
+            book: parseInt(btn.dataset.book, 10),
+            start: parseInt(btn.dataset.start, 10),
+            end: parseInt(btn.dataset.end, 10)
+          };
+          corpusWork.value = btn.dataset.work;
+          updateBookOptions();
+          corpusBook.value = btn.dataset.book;
+          corpusStart.value = btn.dataset.start;
+          corpusEnd.value = btn.dataset.end;
+          updateReadLink();
+        } else {
+          currentCorpusRange = null;
+        }
+        handleRunAll();
+      });
+    });
+
+    // Corpus picker listeners
+    corpusWork.addEventListener('change', () => {
+      updateBookOptions();
+      updateReadLink();
+      fetchCorpusLines();
+    });
+    corpusBook.addEventListener('change', () => {
+      updateReadLink();
+      fetchCorpusLines();
+    });
+    btnFetchLines.addEventListener('click', fetchCorpusLines);
+
+    btnLoadRange.addEventListener('click', () => {
+      if (currentFetchedLines && currentFetchedLines.length > 0) {
+        inputEl.value = currentFetchedLines.map(l => l.latin).join(' ');
+        currentCorpusRange = {
+          work: corpusWork.value,
+          book: parseInt(corpusBook.value, 10),
+          start: parseInt(corpusStart.value, 10) || 1,
+          end: parseInt(corpusEnd.value, 10) || currentFetchedLines.length
+        };
+        handleRunAll();
+      }
+    });
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const qWork = urlParams.get('work');
+      const qBook = urlParams.get('book');
+      const qStart = urlParams.get('start');
+      const qEnd = urlParams.get('end');
+
+      if (qWork) {
+        corpusWork.value = qWork;
+        updateBookOptions();
+        if (qBook) corpusBook.value = qBook;
+        if (qStart) corpusStart.value = qStart;
+        if (qEnd) corpusEnd.value = qEnd;
+        updateReadLink();
+        currentCorpusRange = {
+          work: qWork,
+          book: parseInt(qBook || '1', 10),
+          start: parseInt(qStart || '1', 10),
+          end: parseInt(qEnd || qStart || '1', 10)
+        };
+        fetch(`/virgil?work=${encodeURIComponent(qWork)}&book=${encodeURIComponent(qBook || '1')}&start=${currentCorpusRange.start}&end=${currentCorpusRange.end}`)
+          .then(r => r.json())
+          .then(lines => {
+            if (lines && lines.length > 0) {
+              inputEl.value = lines.map(l => l.latin).join(' ');
+              currentFetchedLines = lines;
+              renderBrowseLines(lines);
+              handleRunAll();
+            }
+          });
+      } else {
+        updateBookOptions();
+        updateReadLink();
+        fetchCorpusLines();
+        if (inputEl.value.trim()) {
+          handleRunAll();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

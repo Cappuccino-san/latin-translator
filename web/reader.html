@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} — Virgil Full Reader</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #131c2e;
+      --card-border: #23334d;
+      --card-inner: #0b1220;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --primary: #38bdf8;
+      --primary-hover: #0ea5e9;
+      --accent: #c084fc;
+      --accent-bg: rgba(192, 132, 252, 0.12);
+      --success: #34d399;
+      --table-header: #1e293b;
+      --table-row-alt: #0e1726;
+      --line-hover: rgba(56, 189, 248, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 1.5rem 1rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Top Nav Bar */
+    .top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--card-inner);
+      color: var(--primary);
+      border: 1px solid var(--card-border);
+      border-radius: 0.45rem;
+      padding: 0.45rem 0.9rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.15s ease;
+    }
+
+    .btn-back:hover {
+      background: var(--primary);
+      color: #090d16;
+      border-color: var(--primary);
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    select {
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 0.4rem;
+      color: var(--text);
+      padding: 0.45rem 0.75rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .jump-input {
+      width: 80px;
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 0.4rem;
+      color: var(--text);
+      padding: 0.45rem 0.5rem;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Header banner */
+    .header-banner {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-banner h1 span {
+      color: var(--primary);
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .meta-badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 0.3rem;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.78rem;
+    }
+
+    .meta-badge-trans {
+      background: rgba(192, 132, 252, 0.12);
+      color: var(--accent);
+    }
+
+    /* Reading Table */
+    .reader-table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .reader-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .reader-table th {
+      background: var(--table-header);
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .reader-row {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      transition: background 0.15s ease;
+    }
+
+    .reader-row:nth-child(even) {
+      background: var(--table-row-alt);
+    }
+
+    .reader-row:hover {
+      background: var(--line-hover);
+    }
+
+    .cell-num {
+      width: 55px;
+      padding: 0.65rem 0.85rem;
+      vertical-align: top;
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      font-weight: 700;
+      user-select: none;
+    }
+
+    .cell-latin {
+      width: 48%;
+      padding: 0.65rem 1rem;
+      vertical-align: top;
+      font-family: Georgia, serif;
+      font-size: 1.05rem;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    .cell-latin a {
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: 1px dotted transparent;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .cell-latin a:hover {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .cell-english {
+      width: 42%;
+      padding: 0.65rem 1rem;
+      vertical-align: top;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .cell-actions {
+      width: 80px;
+      padding: 0.65rem 0.85rem;
+      vertical-align: top;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card-inner);
+      color: var(--text-muted);
+      border: 1px solid var(--card-border);
+      border-radius: 0.35rem;
+      padding: 0.25rem 0.55rem;
+      font-size: 0.75rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      margin-left: 0.25rem;
+    }
+
+    .action-btn:hover {
+      background: var(--primary);
+      color: #090d16;
+      border-color: var(--primary);
+    }
+
+    .copy-success {
+      background: var(--success) !important;
+      color: #090d16 !important;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Navigation Bar -->
+    <div class="top-bar">
+      <div class="nav-left">
+        <a href="/" class="btn-back">&larr; Back to Translator</a>
+        <div class="nav-controls">
+          <select id="reader-work-select">
+            <option value="aeneid" {{AENEID_SELECTED}}>Aeneid (Books I–XII)</option>
+            <option value="eclogues" {{ECLOGUES_SELECTED}}>Eclogues (I–X)</option>
+            <option value="georgics" {{GEORGICS_SELECTED}}>Georgics (Books I–IV)</option>
+          </select>
+          <select id="reader-book-select">
+            {{BOOK_OPTIONS}}
+          </select>
+          <input type="number" id="reader-jump-line" class="jump-input" placeholder="Line #" min="1" max="{{TOTAL_LINES}}">
+          <button type="button" id="btn-jump" class="btn-back" style="padding: 0.45rem 0.75rem;">Jump</button>
+        </div>
+      </div>
+      <div>
+        <span style="font-size: 0.85rem; color: var(--text-muted);">Total lines: <strong>{{TOTAL_LINES}}</strong></span>
+      </div>
+    </div>
+
+    <!-- Header Banner -->
+    <div class="header-banner">
+      <h1>{{WORK_TITLE}} <span>{{BOOK_LABEL}} {{BOOK_NUM}}</span></h1>
+      <div class="meta-bar">
+        <span class="meta-badge">Latin: Perseus / Greenough 1900 Edition</span>
+        <span class="meta-badge meta-badge-trans">English: {{TRANSLATOR_NAME}} ({{TRANSLATOR_YEAR}}) &bull; Public Domain</span>
+        <span>Click any line or "Analyze 🔍" to open in the interactive translator analyzer</span>
+      </div>
+    </div>
+
+    <!-- Reader Table -->
+    <div class="reader-table-container">
+      <table class="reader-table">
+        <thead>
+          <tr>
+            <th style="width: 55px;">Line</th>
+            <th>Latin Text (P. Vergilius Maro)</th>
+            <th>English Translation ({{TRANSLATOR_NAME}})</th>
+            <th style="width: 80px; text-align: right;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ROWS_HTML}}
+        </tbody>
+      </table>
+    </div>
+
+    <footer>
+      <p>Latin NLP Corpus Reader &bull; <a href="/">Translator UI</a> &bull; <a href="/docs" target="_blank">OpenAPI Docs (/docs)</a> &bull; Perseus Digital Library (CC BY-SA 3.0 US / Public Domain)</p>
+    </footer>
+  </div>
+
+  <script>
+    const workSelect = document.getElementById('reader-work-select');
+    const bookSelect = document.getElementById('reader-book-select');
+    const jumpInput = document.getElementById('reader-jump-line');
+    const btnJump = document.getElementById('btn-jump');
+
+    workSelect.addEventListener('change', () => {
+      const w = workSelect.value;
+      window.location.href = `/virgil/read?work=${encodeURIComponent(w)}&book=1`;
+    });
+
+    bookSelect.addEventListener('change', () => {
+      const w = workSelect.value;
+      const b = bookSelect.value;
+      window.location.href = `/virgil/read?work=${encodeURIComponent(w)}&book=${encodeURIComponent(b)}`;
+    });
+
+    function jumpToLine() {
+      const val = parseInt(jumpInput.value, 10);
+      if (!val) return;
+      const row = document.getElementById(`line-${val}`);
+      if (row) {
+        row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        row.style.background = 'rgba(56, 189, 248, 0.25)';
+        setTimeout(() => {
+          row.style.background = '';
+        }, 2000);
+      }
+    }
+
+    btnJump.addEventListener('click', jumpToLine);
+    jumpInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') jumpToLine();
+    });
+
+    function copyLine(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copy-success');
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.classList.remove('copy-success');
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>
+
